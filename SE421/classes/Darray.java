@@ -33,4 +33,12 @@ public class Darray {
             System.out.println(items[i]);
         }
     }
+
+    public int indexOf(int value) {
+        for (int i = 0; i < count; i++) {
+            if (items[i] == value)
+                return i;
+        }
+        return -1;
+    }
 }
