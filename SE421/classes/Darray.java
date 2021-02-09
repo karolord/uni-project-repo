@@ -9,14 +9,23 @@ public class Darray {
     }
 
     public void insert(int value) {
-        items[count] = value;
-        count++;
+        if (items.length == count) {
+            int[] big = new int[count * 2];
+            for (int i = 0; i < count; i++) {
+                big[i] = items[i];
+            }
+            items = big;
+        }
+        items[count++] = value;
     }
 
-    public void removefirst(int value) {
-        for (int i = 0; i < count; i++) {
-            if()
-        }
+    public void remove(int index) {
+        if (index < 0 || index >= count)
+            throw new IllegalArgumentException();
+        for (int i = index; i < count; i++)
+            items[i] = items[i + 1];
+
+        count--;
     }
 
     public void printD() {
@@ -24,5 +33,4 @@ public class Darray {
             System.out.println(items[i]);
         }
     }
-
 }
