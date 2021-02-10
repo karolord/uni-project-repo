@@ -11,7 +11,6 @@ public class main {
         array.insert(20);
         array.insert(30);
         array.printD();
-
         array.remove(1);
         array.printD();
         System.out.println(array.indexOf(20));
