@@ -3,7 +3,9 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io"
 	"math"
+	"os"
 )
 
 // variables in go
@@ -30,10 +32,13 @@ func main() {
 	}
 
 	//concatination in println
-	fmt.Println("yes", test)
+	fmt.Println("yes")
 
-	//another type of concatination
-	fmt.Sprintf()
+	//another type of concatination assigning a string the value of sprintf
+	s := fmt.Sprintf("%d is 5 and %d is 8\n", test, num2)
+
+	io.WriteString(os.Stdout, s)
+
 	//for loop
 	for i := 0; i < 5; i++ {
 		fmt.Println("test")
