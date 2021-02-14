@@ -2,8 +2,11 @@ package SE421.classes;
 
 public class assignment2 {
    public static void main(String[] args) {
-       
-   } 
+    Dinput i1 = new Dinput();
+    i1.value = 5;      
+   
+
+    } 
 
 
 
@@ -14,8 +17,8 @@ public class assignment2 {
         double value;
     }
 
-    public void addition() {
-        
+    public double addition(double i, double j) {
+        return i+j;
     }
 
     public void () {
