@@ -1,0 +1,3 @@
+The addition result of 1.0 and 1.0 is 2.0
+The multiplication result of 1.0 and 1.0 is 1.0
+The division result of 1.0 and 1.0 is 1.0
