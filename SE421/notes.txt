@@ -1,0 +1,11 @@
+Software systems ----> DESIGN
+1. UI DESIGN
+2. DATABASE DESIGN
+we will be discussing the structure in the code
+system two parts business logic and code structure
+code structure abstract --- business logic tangible
+analysis --- requirements >>> DESIGN
+se 421 we consider  the requiremets to be ture and will not question them
+For assigment 2 consider that more classes might be detremental
+dont put business logic in the main  function
+
