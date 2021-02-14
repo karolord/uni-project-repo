@@ -7,5 +7,5 @@ code structure abstract --- business logic tangible
 analysis --- requirements >>> DESIGN
 se 421 we consider  the requiremets to be ture and will not question them
 For assigment 2 consider that more classes might be detremental
-dont put business logic in the main  function
-
+don't put business logic in the main  function
+SE421 abstract concepts are like art
