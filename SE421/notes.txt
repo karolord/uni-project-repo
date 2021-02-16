@@ -11,7 +11,7 @@ don't put business logic in the main  function
 SE421 abstract concepts are like art
 
 
-Lecture 16/2
+Lecture 16/2 michael chp1
     software design
      a software model is a representation of a software .
      a software structure defines how the system should be arranged
