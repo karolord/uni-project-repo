@@ -1,0 +1,26 @@
+Data structure and algorithms
+
+
+computational problems
+a cp defines a desired relationship between input and outout
+each problem has domain
+fore example sorting can be lines or people
+an instance of a sorting problem would be a specific example
+sorting problem is the prematation of the input so that we get an output where a1 < a2
+
+relation between algorithms and computational problems
+an algorithm is a way to solve a well declared computational problem
+solving the generic version will result in creating a solution for each instance
+searching
+input : word,dictionary
+output:definition
+
+AL1: checking each page
+Al2: checking two pages
+Al3: halfing the dictionary log base 2
+
+a program is an executable implementation of an algorithm
+ thomas chapter 1
+
+logical solution
+a logical solution follows a set of rules or constraints or both

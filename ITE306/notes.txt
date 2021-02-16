@@ -1,0 +1,24 @@
+CLI (command line interface) 
+faster
+more powerfull
+learning curve
+termina --- surounds shell
+shell ----- Read command  =======> executes command (Checks what to do)
+shell tyoes
+Bash
+zsh
+csh
+
+commands
+tty (teletypewriter
+gives the name of the terminal
+uname
+prints the os name
+uname -a
+when running commands there are options that are triggered
+man command returns the manual for a specific command
+clear clears the terminal
+ you can use multiple options in the same line and with one -
+ whatis quickly tells you what a command does
+ echo will return your input
+echo will not print qoutations
