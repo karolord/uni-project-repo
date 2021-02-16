@@ -10,7 +10,7 @@ zsh
 csh
 
 commands
-tty (teletypewriter
+tty (teletypewriter)
 gives the name of the terminal
 uname
 prints the os name
