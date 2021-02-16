@@ -9,3 +9,46 @@ se 421 we consider  the requiremets to be ture and will not question them
 For assigment 2 consider that more classes might be detremental
 don't put business logic in the main  function
 SE421 abstract concepts are like art
+
+
+Lecture 16/2
+    software design
+     a software model is a representation of a software .
+     a software structure defines how the system should be arranged
+     to develop the ability to differentiate between business logic and software structure compare the first two labs
+    View the code in structure rather than fuction
+    eyes of the lord
+    lab1 -------------------------- lab2
+    lab 1 +++
+    1. code simplicity
+    2. maintainability
+    3. faster
+    lab 1 ---
+    1. Bad for complex problems
+    2. repitition
+    lab 2++
+    code structure isn't restricted to the laws of physics
+    dynamic structure
+    static structure
+
+    
+    lab 2 ---
+    1. increased complexity
+    2. slower ?
+
+
+    testability
+    maintainability
+    acceptabile performance
+    security
+    availability
+    portability
+
+    we have other methods to represent software structure this allows the structuring to occur before the implementation in the design phase
+
+    in agile we have a flexible begining design that continuously changes based on the requirements
+
+    The statement:
+    software design is never finished in agile
+    because the requirements are always changing
+    you can never have a perfect design thatsssss
