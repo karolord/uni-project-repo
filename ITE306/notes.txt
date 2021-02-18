@@ -35,3 +35,12 @@ watch will refresh a command every 2 seconds
  !id will execute one of the commands from the List if the id is invalid will return erros
  reboot will restart the machine
 shutdown will shut it down after 1 minute 
+
+
+lecture 18
+
+file systems is an abstract layer that helps in managing data
+ pwd will print the working directory
+ ls list 
+ a directory is a file
+ 
