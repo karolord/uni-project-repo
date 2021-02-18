@@ -24,3 +24,24 @@ a program is an executable implementation of an algorithm
 
 logical solution
 a logical solution follows a set of rules or constraints or both
+
+
+Lecuture 17th feb
+
+
+coding is the process of instructing a computer so it performs a task
+execution graph will be the coding
+execution path
+for/if/while are abstact illusion to represent the concepts 
+ 
+
+
+ thomas chp1
+ asymptotic analysis
+
+
+ Difficult question merge?
+piecewise doesn't work
+
+
+lecture 

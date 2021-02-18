@@ -51,4 +51,28 @@ Lecture 16/2 michael chp1
     The statement:
     software design is never finished in agile
     because the requirements are always changing
-    you can never have a perfect design thatsssss
+    you can never have a perfect design thatsssss 
+
+
+    lecture 19th 
+
+    rules and contstraints
+    from se complexity is another thing to consider
+    [john chapter 1]
+    The greatest limitation from se perspective when it comes to developing software systems is our ability to understand what we are creating.
+
+    Code complexity refers to the complexity of the structure and design
+
+    complexity in the code is anything related to the structure that makes the code harder to understand or modify.
+
+    3 signs for complexity
+    1. change implication
+    2. cognative load
+    3. unknown unknowns (chaotic)
+
+    reduce code complexity:
+    1. Balanced software structure
+    2. abstractions (isolating system)
+    
+    Keep track of : complexity of the system is the sum of the complexity of the subsystems and their relationships.
+    
