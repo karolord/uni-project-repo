@@ -22,3 +22,16 @@ clear clears the terminal
  whatis quickly tells you what a command does
  echo will return your input
 echo will not print qoutations
+echo -e hello \\n auis
+-e makes it possible to interpret the backslashes
+check in which cases the a single backslash wont work
+
+date showcases date
+time gives the time needed to run a programz
+watch will refresh a command every 2 seconds
+ to escape a command use ctrl + c or ctrl + shift + c or :q 
+ !! will print out the previous command
+ history will return the last 500 commands
+ !id will execute one of the commands from the List if the id is invalid will return erros
+ reboot will restart the machine
+shutdown will shut it down after 1 minute 
