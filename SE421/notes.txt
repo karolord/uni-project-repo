@@ -75,4 +75,4 @@ Lecture 16/2 michael chp1
     2. abstractions (isolating system)
     
     Keep track of : complexity of the system is the sum of the complexity of the subsystems and their relationships.
-    
+   
