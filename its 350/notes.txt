@@ -44,4 +44,20 @@ for/if/while are abstact illusion to represent the concepts
 piecewise doesn't work
 
 
-lecture 
+lecture
+
+we will procede as usual for even it will be N/2 + 1
+if we have x %3 =2 will be n/3
+
+
+Lecture feb 22nd
+keywords like break and continue and return we will estimate that they cost 0 time units
+*** multilication and adiition have different values for time units
+when calling your own function the complexity will be 1* complexity of the function individually
+
+
+
+proof
+
+slides
+sigact original paper theta O omega
