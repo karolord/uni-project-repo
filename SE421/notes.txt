@@ -73,9 +73,8 @@ Lecture 16/2 michael chp1
     reduce code complexity:
     1. Balanced software structure
     2. abstractions (isolating system)
-    
     Keep track of : complexity of the system is the sum of the complexity of the subsystems and their relationships.
-
+   
     lecutre february 23rd
         Tightly coupled structures vs loosely coupled structures
     
