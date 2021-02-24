@@ -8,7 +8,7 @@ func main() {
 
 	x := 5
 
-	fmt.Printf(x)
+	fmt.Println(x)
 	for i := 0; i < x; i++ {
 
 	}
