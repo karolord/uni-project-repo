@@ -79,4 +79,11 @@ Lecture 16/2 michael chp1
         Tightly coupled structures vs loosely coupled structures
     
     
-   
+    lecutre feb 25th
+    design patterns
+     Get-set design patterns
+    final keyword makes a variable read only
+    get and set is horrific for multithreading
+     for final it should be something that is impossible to change
+     get and set is more testable
+     
