@@ -61,3 +61,19 @@ proof
 
 slides
 sigact original paper theta O omega
+
+lecture 24th
+Data structure
+ is the arrangement of data in memory RAM
+ array is a data structure.
+kernal will alocate memory for the application callled virtual memory address
+	var arr[10] int // wll cost 1 time unit
+    when stored on the actual ram the blocks might not be  attached
+hardware makes the O() of retrieving 1
+    lab 2
+
+//delete O(n)
+//insert O(n)
+//scannins O(n)
+//update O(1)
+//search O(n)
