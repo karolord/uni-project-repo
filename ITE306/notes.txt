@@ -50,3 +50,7 @@ file systems is an abstract layer that helps in managing data
 
    lecture chapter 11 ibrahim 
    
+each sectir is 512 bytes or 4096
+chapter 10 thomas 
+
+
