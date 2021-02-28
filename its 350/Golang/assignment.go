@@ -33,6 +33,5 @@ func delete(index int) {
 		} else {
 			arr[i] = arr[i+1]
 		}
-
 	}
 }
