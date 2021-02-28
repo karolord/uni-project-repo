@@ -54,3 +54,14 @@ each sectir is 512 bytes or 4096
 chapter 10 thomas 
 
 
+redirecion and pipelining are advantages that cli offers over gui
+ > means save to file 
+ >> append to file
+ < means input
+ 2> channel number 2 error will be outputed
+ &> both channels
+ | means pipeline
+ so output is used as another Input
+ tee means save the output then give it as Input
+ check &> /dev/null usage
+ 
