@@ -64,4 +64,9 @@ redirecion and pipelining are advantages that cli offers over gui
  so output is used as another Input
  tee means save the output then give it as Input
  check &> /dev/null usage
- 
+ functuinal programmig
+ imperative programing 
+closure
+
+functional programming vs imperative
+check for summer
