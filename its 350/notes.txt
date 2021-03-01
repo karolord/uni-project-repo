@@ -77,3 +77,24 @@ hardware makes the O() of retrieving 1
 //scannins O(n)
 //update O(1)
 //search O(n)
+ functuinal programmig
+ imperative programing 
+closure
+
+functional programming vs imperative
+check for summer
+breakpoints in go
+
+stack disadvantages
+more rigid
+getting value is o(n) per element
+sending value is also o(n)
+
+advantages
+it maintains a lifo policy
+
+
+queue
+
+convert to o(1)
+top push pop 
