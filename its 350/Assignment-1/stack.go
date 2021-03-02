@@ -19,7 +19,7 @@ func push(x int) {
 	counter++
 }
 
-func pop() int {
+func pop() (int, error) {
 	if counter == 0 {
 		return 0, errors.new("stack is empty cannot pop")
 	} else {
