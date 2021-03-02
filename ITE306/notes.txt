@@ -73,3 +73,6 @@ awk '{print $colum num}'
 semi colum dectates the end of a line or pipeline
 # will dictate a commented
 $(command) will execute the command and return the output as an argument
+yes command 
+make yes more dynamic 
+yes $(date)
