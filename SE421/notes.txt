@@ -88,3 +88,8 @@ Lecture 16/2 michael chp1
      get and set is more testable
     final keyboard for method means that it is not inheritable
     
+
+    lecuture 2nd of march
+    michael [chapter 2&3]
+    improving design skills
+    
