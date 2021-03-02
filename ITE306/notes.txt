@@ -64,3 +64,12 @@ redirecion and pipelining are advantages that cli offers over gui
  so output is used as another Input
  tee means save the output then give it as Input
  check &> /dev/null usage
+
+homework
+<< check it
+awk '{print $colum num}'
+&& joins two pipelines if a is executed then do be
+|| opposite of && if a is error then execute b
+semi colum dectates the end of a line or pipeline
+# will dictate a commented
+$(command) will execute the command and return the output as an argument
