@@ -1,0 +1,13 @@
+For this assignment, you are required to write a golang application. Your application must have a struct representing students. Each student must have student id, name, GPA and place of birth.
+
+1- When a user runs your application, ask the user to enter a positive number, referred as n throughout this assignment.
+enter a positive number : n is the
+Then, ask the user to provide the details of n students. Save the collected details in a one-dimensional array. The size of the array must be fixed to 100.
+mix of struct and Arrays
+error check this
+2- Write an algorithm to find the student with the highest GPA, and the student with the lowest GPA. Use the array created in Step 1 for searching. Compute the time complexity and the Big O.
+write  
+3- Repeat Step 1, but save the data in a stack this time. Set the size of the stack to 5.
+4- Repeat Step 2, but use the stack created in Step 3 instead.
+5- Repeat Step 2, but here the array should not hold more than n records.
+6- Repeat Step 2, but use the array created in Step 5 instead.
