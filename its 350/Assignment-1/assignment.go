@@ -11,57 +11,72 @@ func main() {
 	fmt.Println("Please enter the number of students: ")
 	fmt.Scanln(&numstudents)
 	fmt.Println(numstudents)
-	var s Students
-	s.AssignStudent(numstudents)
-	fmt.Println(s.maxgpa())
+	var arr [100]Students
+	for i := 0; i < numstudents; i++ {
+		arr[i].AssignStudent()
+	}
+	arr[Maxgpa(arr)].Print()
+	arr[Mingpa(arr)].Print()
+	// end of first 2 requirements
+	var struct [5]Students
+
 }
 
 type Students struct {
-	id   [100]int
-	name [100]string
-	GPA  [100]float64
-	pob  [100]string
+	id   int
+	name string
+	GPA  float64
+	pob  string
 }
 
-func (s *Students) AssignStudent(n int) {
-	for i := 0; i < n; i++ {
-		fmt.Println("Please enter the Name of the student: ")
-		fmt.Scanln(&s.name[i])
-		fmt.Println("Please enter the ID of the student: ")
-		fmt.Scanln(&s.id[i])
-		fmt.Println("Please enter the GPA of the student: ")
-		fmt.Scanln(&s.GPA[i])
-		fmt.Println("Please enter where the student was born: ")
-		fmt.Scanln(&s.pob[i])
-	}
+func (s *Students) AssignStudent() {
+	fmt.Println("Please enter the Name of the student: ")
+	fmt.Scanln(&s.name)
+	fmt.Println("Please enter the ID of the student: ")
+	fmt.Scanln(&s.id)
+	fmt.Println("Please enter the GPA of the student: ")
+	fmt.Scanln(&s.GPA)
+	fmt.Println("Please enter where the student was born: ")
+	fmt.Scanln(&s.pob)
+
 }
 func (s Students) Print() {
-	for i := 0; i < numstudents; i++ {
-		fmt.Println(s.name[i])
-		fmt.Println(s.GPA[i])
-		fmt.Println(s.id[i])
-		fmt.Println(s.pob[i])
-	}
+	fmt.Println(s.name)
+	fmt.Println(s.GPA)
+	fmt.Println(s.id)
+	fmt.Println(s.pob)
+
 }
-func (s Students) maxgpa() int {
-	var maxGPA float64
-	var index int
-	for k := 0; k < numstudents; k++ {
-		if s.GPA[k] > maxGPA {
-			maxGPA = s.GPA[k]
-			index = k
+func Maxgpa(s [100]Students) int {
+	x := s[0].GPA
+	index := 0
+	for i := 1; i < numstudents; i++ {
+		if s[i].GPA > x {
+			x = s[i].GPA
+			index = i
 		}
 	}
 	return index
 }
-func (s Students) mingpa() int {
-	var minGPA float64
-	var index int
-	for k := 0; k < numstudents; k++ {
-		if s.GPA[k] < minGPA {
-			maxGPA = s.GPA[k]
-			index = k
+
+func Mingpa(s [100]Students) int {
+	x := s[0].GPA
+	index := 0
+	for i := 1; i < numstudents; i++ {
+		if s[i].GPA < x {
+			x = s[i].GPA
+			index = i
 		}
 	}
 	return index
+}
+
+func (s *Student) push(){
+	
+}
+
+
+func (s *Student) pop(){
+
+
 }
