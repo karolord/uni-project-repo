@@ -99,4 +99,7 @@ queue
 convert to o(1)
 top push pop 
 
+lecture 3nd of march
+
+assignment
 
