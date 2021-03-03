@@ -102,4 +102,10 @@ top push pop
 lecture 3nd of march
 
 assignment
+sorting problem is the prematation of the input so that we get an output where a1 < a2
+input a1,a2,a3,a4,a5,a6,a7
+output a1=<a2=<a3=<a4=<a5=<a6=<a7
+sorting is important
+
+
 
