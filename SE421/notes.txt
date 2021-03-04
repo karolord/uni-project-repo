@@ -93,3 +93,14 @@ Lecture 16/2 michael chp1
     michael [chapter 2&3]
     improving design skills
     
+
+
+    ood
+    1- a class represents a set of objects
+    2- an object must have a set of responsibilities that are logically group (it can hold data, or do something)
+    3- an object can interact with other objects
+    crc cards
+    create crc
+    derive uml class diagram
+lab1 support star * ary operator
+    

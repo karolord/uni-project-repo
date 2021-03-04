@@ -1,23 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 
-	var s [5]student
-	addID(s)
-	fmt.Println(s[2].ID)
+	var x student
+	add(x)
 
+	
+	type student struct {
 }
 
-type student struct {
 	ID int
 }
 
-func addID(s [5]*student) {
-	for i := 0; i < len(s); i++ {
-		s[i].ID = 2
-	}
+func add(s student) {
+	s.ID = 5
 }

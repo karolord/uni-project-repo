@@ -20,6 +20,7 @@ func main() {
 	// end of first 2 requirements
 	var struct [5]Students
 
+
 }
 
 type Students struct {
@@ -72,7 +73,7 @@ func Mingpa(s [100]Students) int {
 }
 
 func (s *Student) push(){
-
+			
 }
 
 

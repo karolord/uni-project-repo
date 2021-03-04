@@ -76,3 +76,6 @@ $(command) will execute the command and return the output as an argument
 yes command 
 make yes more dynamic 
 yes $(date)
+user can be a person 
+couple of people 
+or an application
