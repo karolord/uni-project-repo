@@ -5,7 +5,7 @@ import (
 )
 
 var numstudents int
-
+var counter int // counter for struct
 func main() {
 
 	fmt.Println("Please enter the number of students: ")
@@ -72,7 +72,7 @@ func Mingpa(s [100]Students) int {
 }
 
 func (s *Student) push(){
-	
+
 }
 
 
