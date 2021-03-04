@@ -1,34 +1,23 @@
 package main
 
 import (
-	"errors"
+	"fmt"
 )
-
-var stack [5]int
-var counter int
 
 func main() {
 
+	var s [5]student
+	addID(s)
+	fmt.Println(s[2].ID)
+
 }
 
-func push(x int) {
-	stack[counter] = x
-	counter++
+type student struct {
+	ID int
 }
 
-func pop() (int, error) {
-	if counter == 0 {
-		return 0, errors.New("stack is empty cannot pop")
-	} else {
-		var x = stack[counter-1]
-		stack[counter-1] = 0
-		counter--
-		return x, nil
+func addID(s [5]*student) {
+	for i := 0; i < len(s); i++ {
+		s[i].ID = 2
 	}
-}
-func maxGPAs() {
-	var maxGPA int
-	for i := 5; i > 0; i-- {
-	}
-
 }
