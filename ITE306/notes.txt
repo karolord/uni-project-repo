@@ -79,3 +79,4 @@ yes $(date)
 user can be a person 
 couple of people 
 or an application
+sudo chmod g=x file
