@@ -80,3 +80,6 @@ user can be a person
 couple of people 
 or an application
 sudo chmod g=x file
+sudo chmod o+X file
+sudo chmod o+t file
+sudo chmod g+s file
