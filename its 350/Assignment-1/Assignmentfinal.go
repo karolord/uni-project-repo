@@ -79,6 +79,8 @@ func Maxgpa(s [100]student) {
 	s[index].Print()
 }
 
+// the complexity is 12 + 11n big o us O(n)
+
 func Mingpa(s [100]student) {
 	x := s[0].GPA
 	index := 0
@@ -92,6 +94,7 @@ func Mingpa(s [100]student) {
 	s[index].Print()
 }
 
+// the complexity is 12 +11n big o is O(n)
 //assignstudent,  push and pop for req 3 and 4
 func Requirement2() {
 	var stack [5]student
@@ -213,6 +216,9 @@ func Maxgpaarr2(r [100]requirement5) {
 	r[Index].students.Print()
 
 }
+
+// the complexity is 12 +11n big o is O(n)
+
 func Mingpaarr2(r [100]requirement5) {
 	var Index int
 	temp := r[0].students.GPA
@@ -225,3 +231,5 @@ func Mingpaarr2(r [100]requirement5) {
 	fmt.Println("The student with the lowest GPA is ")
 	r[Index].students.Print()
 }
+
+// the complexity is 12 +11n big o is O(n)
