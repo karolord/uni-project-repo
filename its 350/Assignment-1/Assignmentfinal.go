@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+//citation https://stackoverflow.com/questions/2439453/using-a-pointer-to-array
 var n int
 var counter int // counter for stack
 func main() {
