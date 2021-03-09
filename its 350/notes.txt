@@ -106,6 +106,11 @@ sorting problem is the prematation of the input so that we get an output where a
 input a1,a2,a3,a4,a5,a6,a7
 output a1=<a2=<a3=<a4=<a5=<a6=<a7
 sorting is important
+building another data structure on top of it or messing with struct
 
+copy time complexity
+/tools/
+array 3 start
 
-
+array is just a pointer to a memory address
+    

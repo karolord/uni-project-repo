@@ -102,5 +102,9 @@ Lecture 16/2 michael chp1
     crc cards
     create crc
     derive uml class diagram
-lab1 support star * ary operator
-    
+    lab1 support star * ary operator
+
+
+   Lecture march 7th,
+   polymorphism
+   paul chapter 10,

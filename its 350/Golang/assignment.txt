@@ -11,3 +11,24 @@ write
 4- Repeat Step 2, but use the stack created in Step 3 instead.
 5- Repeat Step 2, but here the array should not hold more than n records.
 6- Repeat Step 2, but use the array created in Step 5 instead.
+
+notes :
+1- req 5
+4 ways to solve it : 2 ways find it out :
+2 more complex 
+make a data structure on top of them
+arr[int] = memory + int(distance till the next element) 
+so subslicing will affect the parent slices they share the same memory space.
+hacking is like this :
+ the advantage is by reference,
+ its very cheap to execute 
+ dis
+ data can be corrupted
+
+ by value
+ copy function is faster than looping
+
+
+ s=t
+ to shrink a slice we use the blog
+ 
