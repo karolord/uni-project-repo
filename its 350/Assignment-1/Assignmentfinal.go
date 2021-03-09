@@ -7,9 +7,11 @@ import (
 var n int
 var counter int // counter for stack
 func main() {
+	numberassignment()
+	Requirement1()
 	Requirement2()
-	var st requirement5
-
+	numberassignment()
+	Requirement3()
 }
 
 type student struct {
@@ -166,10 +168,11 @@ func Mingpastack(s *[5]student) {
 }
 
 // Requirement 5 and 6
-func requirement3() {
+func Requirement3() {
 	var arr2 [100]requirement5
 	AssignStudentreq5(&arr2)
-
+	Maxgpaarr2(arr2)
+	Mingpaarr2(arr2)
 }
 
 type requirement5 struct {
@@ -195,4 +198,30 @@ func AssignStudentreq5(r *[100]requirement5) {
 		fmt.Println("Please enter where the student was born: ")
 		fmt.Scanln(&r[i].students.Pob)
 	}
+}
+
+func Maxgpaarr2(r [100]requirement5) {
+	var Index int
+	temp := r[0].students.GPA
+	for i := 0; i < n; i++ {
+		if r[i].students.GPA > temp {
+			temp = r[i].students.GPA
+			Index = i
+		}
+	}
+	fmt.Println("The student with the highest GPA is ")
+	r[Index].students.Print()
+
+}
+func Mingpaarr2(r [100]requirement5) {
+	var Index int
+	temp := r[0].students.GPA
+	for i := 0; i < n; i++ {
+		if r[i].students.GPA < temp {
+			temp = r[i].students.GPA
+			Index = i
+		}
+	}
+	fmt.Println("The student with the lowest GPA is ")
+	r[Index].students.Print()
 }
