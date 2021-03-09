@@ -162,3 +162,13 @@ func Mingpastack(s *[5]student)  {
 }
 
 // Requirement 5 and 6
+func requirement3(){
+	var arr[100] requirement5
+
+}
+
+type requirement5 struct{
+	students student
+}
+// new struct so users dont have direct access to student struct
+
