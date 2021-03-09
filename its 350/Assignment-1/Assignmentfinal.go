@@ -9,6 +9,7 @@ var counter int // counter for stack
 func main() {
 	numberassignment()
 	Requirement1()
+	numberassignmentV2()
 	Requirement2()
 	numberassignment()
 	Requirement3()
@@ -28,7 +29,18 @@ func numberassignment() {
 		if n <= 100 {
 			break
 		}
-		fmt.Println("Error please enter a value less then or equal than 100")
+		fmt.Println("Error please enter a value less then or equal to 100")
+	}
+}
+
+func numberassignmentV2() {
+	for {
+		fmt.Println("Please enter the number of students: ")
+		fmt.Scanln(&n)
+		if n <= 5 {
+			break
+		}
+		fmt.Println("Error please enter a value less then or equal to 5")
 	}
 }
 
@@ -104,7 +116,7 @@ func Requirement2() {
 }
 func AssignStudentstack(s *[5]student) {
 	fmt.Println("Please enter the information for 5 students")
-	for i := 0; i < 5; i++ {
+	for i := 0; i < n; i++ {
 		s[i].Push()
 	}
 }
@@ -137,7 +149,7 @@ func Pop(s *[5]student) student {
 }
 func Maxgpastack(s *[5]student) {
 	var temp [5]student
-	for i := 0; i < 5; i++ {
+	for i := 0; i < n; i++ {
 		temp[i] = s[i]
 	}
 	var result student
@@ -154,7 +166,7 @@ func Maxgpastack(s *[5]student) {
 }
 func Mingpastack(s *[5]student) {
 	var temp [5]student
-	for i := 0; i < 5; i++ {
+	for i := 0; i < n; i++ {
 		temp[i] = s[i]
 	}
 	result := temp[4]
