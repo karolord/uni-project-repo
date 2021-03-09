@@ -115,7 +115,6 @@ func Requirement2() {
 	Mingpastack(&stack)
 }
 func AssignStudentstack(s *[5]student) {
-	fmt.Println("Please enter the information for 5 students")
 	for i := 0; i < n; i++ {
 		s[i].Push()
 	}
@@ -154,7 +153,7 @@ func Maxgpastack(s *[5]student) {
 	}
 	var result student
 	tempcount := counter
-	for i := tempcount - 1; i > 0; i-- {
+	for i := tempcount - 1; i >= 0; i-- {
 		compare := Pop(&temp)
 		if compare.GPA > result.GPA {
 			result = compare
@@ -171,7 +170,7 @@ func Mingpastack(s *[5]student) {
 	}
 	result := temp[4]
 	tempcount := counter
-	for i := tempcount; i > 0; i-- {
+	for i := tempcount - 1; i >= 0; i-- {
 		compare := Pop(&temp)
 		if compare.GPA < result.GPA {
 			result = compare
