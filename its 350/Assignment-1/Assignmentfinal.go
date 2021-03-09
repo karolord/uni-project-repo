@@ -17,7 +17,7 @@ func main() {
 type student struct {
 	ID   int
 	Name string
-	GPA  int
+	GPA  float64
 	Pob  string // place of birth
 }
 
