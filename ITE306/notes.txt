@@ -83,3 +83,5 @@ sudo chmod g=x file
 sudo chmod o+X file
 sudo chmod o+t file
 sudo chmod g+s file
+#!/bin/bash
+bash dont terminate wait for my children 
