@@ -146,6 +146,8 @@ func Pop(s *[5]student) student {
 	s[counter].Pob = ""
 	return temp
 }
+
+// time complexity of pop is 8 big o is o(1)
 func Maxgpastack(s *[5]student) {
 	var temp [5]student
 	for i := 0; i < n; i++ {
@@ -163,6 +165,8 @@ func Maxgpastack(s *[5]student) {
 	fmt.Println("The student with the highest GPA is ")
 	result.Print()
 }
+
+// time complexity is 22 + 29n big o is o(1)
 func Mingpastack(s *[5]student) {
 	var temp [5]student
 	for i := 0; i < n; i++ {
@@ -180,6 +184,8 @@ func Mingpastack(s *[5]student) {
 	fmt.Println("The student with the lowest GPA is ")
 	result.Print()
 }
+
+// time complexity is 22 + 29n big o is o(1)
 
 // Requirement 5 and 6
 func Requirement3() {
