@@ -7,8 +7,9 @@ import (
 var n int
 var counter int // counter for stack
 func main() {
-	fmt.Println("Please enter the number of students: ")
-	fmt.Scanln(&n)
+	numberassignment()
+	Requirement1()
+	requirement2()
 
 }
 
@@ -18,13 +19,20 @@ type student struct {
 	GPA  int
 	Pob  string // place of birth
 }
-
+func numberassignment(){
+	for true {
+	fmt.Println("Please enter the number of students: ")
+	fmt.Scanln(&n)
+	if n =< 100 {break}
+	fmt.Println("Error please enter a value less then or equal than 100")
+	}
+}
 // assignstudent for requirement 1 and 2
 func requirement1() {
 	var arr [100]students
 	AssignStudent(&arr)
-	arr[Maxgpa(arr)].Print()
-	arr[Mingpa(arr)].Print()
+	Maxgpa(arr)
+	Mingpa(arr)
 }
 func AssignStudent(s *[100]student) {
 	for i := 0; i < n; i++ {
@@ -45,47 +53,54 @@ func AssignStudent(s *[100]student) {
 	}
 
 }
-func (s students) Print() {
-	fmt.Println(s.name)
-	fmt.Println(s.GPA)
-	fmt.Println(s.id)
-	fmt.Println(s.pob)
+func (s student) Print() {
+	fmt.Println("The student name is ",s.Name)
+	fmt.Println("The student GPA is", s.GPA)
+	fmt.Println("The student ID is" s.ID)
+	fmt.Println("The student Place of Birth is ",s.Pob)
 }
 
 // gpa calculation
-func Maxgpa(s [100]students) int {
+func Maxgpa(s [100]student)  {
 	x := s[0].GPA
 	index := 0
-	for i := 1; i < numstudents; i++ {
+	for i := 1; i < n; i++ {
 		if s[i].GPA > x {
 			x = s[i].GPA
 			index = i
 		}
 	}
-	return index
+	fmt.Println("The student with the highest GPA is ")
+	s[index].Print()
 }
 
-func Mingpa(s [100]students) int {
+func Mingpa(s [100]student) {
 	x := s[0].GPA
 	index := 0
-	for i := 1; i < numstudents; i++ {
+	for i := 1; i < n; i++ {
 		if s[i].GPA < x {
 			x = s[i].GPA
 			index = i
 		}
 	}
-	return index
-}
+	fmt.Println("The student with the lowest GPA is ")
+	s[index].Print()}
 
 //assignstudent,  push and pop for req 3 and 4
-func AssignStudentstack(s *[5]students) {
+func Requirement2(){
+	var stack [5]student
+	AssignStudent(&stack)
+	Maxgpastack(&stack)
+	Mingpastack(&stack)
+}
+func AssignStudentstack(s *[5]student) {
 	fmt.Println("Please enter the information for 5 students")
 	for i := 0; i < 5; i++ {
 		s[i].Push()
 	}
 }
 
-func (s *students) Push() {
+func (s *student) Push() {
 	fmt.Println("Please enter the Name of the student: ")
 	fmt.Scanln(&s.Name)
 	fmt.Println("Please enter the ID of the student: ")
@@ -102,7 +117,7 @@ func (s *students) Push() {
 	fmt.Scanln(&s.Pob)
 	counter++
 }
-func Pop(s *[5]students) students {
+func Pop(s *[5]student) students {
 	counter--
 	temp := s[counter]
 	s[counter].Name = ""
@@ -111,5 +126,39 @@ func Pop(s *[5]students) students {
 	s[counter].Pob = ""
 	return temp
 }
+func Maxgpastack(s *[5]student)  {
+	var temp [5]student
+	for i := 0; i < 5; i++ {
+		temp[i] = s[i]
+	}
+	var result student
+	tempcount := counter
+	for i := tempcount - 1; i > 0; i-- {
+		compare := Pop(&temp)
+		if compare.GPA > result.GPA {
+			result = compare
+		}
+	}
+	counter = tempcount
+	fmt.Println("The student with the highest GPA is ")
+	result.Print()
+}
+func Mingpastack(s *[5]student)  {
+	var temp [5]students
+	for i := 0; i < 5; i++ {
+		temp[i] = s[i]
+	}
+	var result students
+	tempcount := counter
+	for i := tempcount; i > 0; i-- {
+		compare := Pop(&temp)
+		if compare.GPA < result.GPA {
+			result = compare
+		}
+	}
+	counter = tempcount
+	fmt.Println("The student with the lowest GPA is ")
+	result.Print()
+}
 
-//
+// Requirement 5 and 6
