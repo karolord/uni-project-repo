@@ -3,12 +3,14 @@ package SE421.Lab5;
 import java.util.Scanner;
 
 public class Main {
-    Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please enter the numbers of inputs");
+        int n = scanner.nextInt();
         Stararr yes = new Stararr();
         Subtract ye = new Subtract();
-        yes.staradd(5, ye);
+        yes.staradd(n, ye);
     }
 }
 
