@@ -10,24 +10,25 @@ public class Main {
         int n = scanner.nextInt();
         Stararr yes = new Stararr();
         Subtract ye = new Subtract();
-        yes.staradd(n, ye);
+        yes.staroperation(n, ye);
     }
 }
 
-/**
- * InnerMain
- */
+interface Saver {
+    double getresult();
+}
+
 interface Operator {
     double operation(double input1, double input2);
 
 }
 
-class Stararr {
+class Stararr implements Saver {
     double value;
     double result;
     Scanner scanner = new Scanner(System.in);
 
-    public void staradd(int n, Operator o) {
+    public void staroperation(int n, Operator o) {
         for (int i = 0; i < n; i++) {
             System.out.println("Value:");
             value = scanner.nextDouble();
@@ -38,7 +39,7 @@ class Stararr {
 
 }
 
-class add implements Operator {
+class add implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -55,7 +56,7 @@ class add implements Operator {
     }
 }
 
-class Subtract implements Operator {
+class Subtract implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -72,7 +73,7 @@ class Subtract implements Operator {
     }
 }
 
-class multiply implements Operator {
+class multiply implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -89,7 +90,7 @@ class multiply implements Operator {
     }
 }
 
-class divide implements Operator {
+class divide implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -104,4 +105,8 @@ class divide implements Operator {
     public double getresult() {
         return result;
     }
+}
+
+class exporter {
+
 }
