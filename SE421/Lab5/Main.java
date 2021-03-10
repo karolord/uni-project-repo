@@ -5,14 +5,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         Exporter ex = new Exporter();
         System.out.println("please enter the numbers of inputs");
         int n = scanner.nextInt();
         Stararr yes = new Stararr();
-        Subtract ye = new Subtract();
+        add ye = new add();
         yes.staroperation(n, ye);
+        ex.save(yes);
 
     }
 }
