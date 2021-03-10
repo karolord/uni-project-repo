@@ -40,7 +40,8 @@ class Stararr implements Saver {
         }
         System.out.println(result);
     }
-    public double getresult(){
+
+    public double getresult() {
         return result;
     }
 }
@@ -87,7 +88,7 @@ class multiply implements Operator, Saver {
     public double operation(double input1, double input2) {
         value1 = input1;
         value2 = input2;
-        result = input1 + input2;
+        result = input1 * input2;
         return result;
     }
 
