@@ -7,11 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Exporter ex = new Exporter();
         System.out.println("please enter the numbers of inputs");
         int n = scanner.nextInt();
         Stararr yes = new Stararr();
         Subtract ye = new Subtract();
         yes.staroperation(n, ye);
+
     }
 }
 
@@ -37,7 +39,9 @@ class Stararr implements Saver {
         }
         System.out.println(result);
     }
-
+    public double getresult(){
+        return result;
+    }
 }
 
 class add implements Operator, Saver {
@@ -108,7 +112,7 @@ class divide implements Operator, Saver {
     }
 }
 
-class exporter {
+class Exporter {
 
     public void save(Saver s) throws IOException {
         File txt = new File("result.txt");
