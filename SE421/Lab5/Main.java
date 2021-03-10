@@ -1,5 +1,6 @@
 package SE421.Lab5;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
@@ -108,5 +109,13 @@ class divide implements Operator, Saver {
 }
 
 class exporter {
+
+    public void save(Saver s) throws IOException {
+        File txt = new File("result.txt");
+        FileWriter fw = new FileWriter(txt);
+        PrintWriter pw = new PrintWriter(fw);
+        pw.println("The division result is " + s.getresult());
+        pw.close();
+    }
 
 }
