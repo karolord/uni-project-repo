@@ -114,7 +114,7 @@ class exporter {
         File txt = new File("result.txt");
         FileWriter fw = new FileWriter(txt);
         PrintWriter pw = new PrintWriter(fw);
-        pw.println("The division result is " + s.getresult());
+        pw.println("The result is " + s.getresult());
         pw.close();
     }
 
