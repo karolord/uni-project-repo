@@ -108,3 +108,12 @@ Lecture 16/2 michael chp1
    Lecture march 7th,
    polymorphism
    paul chapter 10,
+   implements is big empty arrow
+   add label for used by
+   interfaces up and classes down
+    chain of responsibilities design patterns
+    sequence diagram
+
+    lab 6
+    undo functionality
+    
