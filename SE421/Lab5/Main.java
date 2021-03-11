@@ -11,7 +11,7 @@ public class Main {
         System.out.println("please enter the numbers of inputs");
         int n = scanner.nextInt();
         Stararr yes = new Stararr();
-        add ye = new add();
+        Subtract ye = new Subtract();
         yes.staroperation(n, ye);
         ex.save(yes);
 
@@ -33,8 +33,10 @@ class Stararr implements Saver {
     Scanner scanner = new Scanner(System.in);
 
     public void staroperation(int n, Operator o) {
-        for (int i = 0; i < n; i++) {
-            System.out.println("Value:");
+        System.out.printf("value:");
+        result = scanner.nextDouble();
+        for (int i = 0; i < n - 1; i++) {
+            System.out.printf("Value:");
             value = scanner.nextDouble();
             result = o.operation(result, value);
         }
@@ -46,7 +48,7 @@ class Stararr implements Saver {
     }
 }
 
-class add implements Operator, Saver {
+class Add implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -80,7 +82,7 @@ class Subtract implements Operator, Saver {
     }
 }
 
-class multiply implements Operator, Saver {
+class Multiply implements Operator, Saver {
     double value1;
     double value2;
     double result;
@@ -97,7 +99,7 @@ class multiply implements Operator, Saver {
     }
 }
 
-class divide implements Operator, Saver {
+class Divide implements Operator, Saver {
     double value1;
     double value2;
     double result;
