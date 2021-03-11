@@ -113,4 +113,7 @@ copy time complexity
 array 3 start
 
 array is just a pointer to a memory address
-    
+    struct can have methods attached to themselves
+    structs and methods 
+    when inserting store the variables to make it o(1)
+    data structures and math
