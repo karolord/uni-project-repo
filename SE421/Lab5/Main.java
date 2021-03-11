@@ -18,21 +18,21 @@ public class Main {
     }
 }
 
-interface Saver {
+interface hasresult  {
     double getresult();
 }
 
-interface Operator {
+interface premiativeoperator{
     double operation(double input1, double input2);
 
 }
 
-class Stararr implements Saver {
+class Stararr implements hasresult {
     double value;
     double result;
     Scanner scanner = new Scanner(System.in);
 
-    public void staroperation(int n, Operator o) {
+    public void staroperation(int n, premiativeoperator o) {
         System.out.printf("value:");
         result = scanner.nextDouble();
         for (int i = 0; i < n - 1; i++) {
@@ -48,7 +48,7 @@ class Stararr implements Saver {
     }
 }
 
-class Add implements Operator, Saver {
+class Add implements premiativeoperator,hasresult {
     double value1;
     double value2;
     double result;
@@ -65,7 +65,7 @@ class Add implements Operator, Saver {
     }
 }
 
-class Subtract implements Operator, Saver {
+class Subtract implements premiativeoperator,hasresult {
     double value1;
     double value2;
     double result;
@@ -82,7 +82,7 @@ class Subtract implements Operator, Saver {
     }
 }
 
-class Multiply implements Operator, Saver {
+class Multiply implements premiativeoperator,hasresult {
     double value1;
     double value2;
     double result;
@@ -99,7 +99,7 @@ class Multiply implements Operator, Saver {
     }
 }
 
-class Divide implements Operator, Saver {
+class Divide implements premiativeoperator,hasresult {
     double value1;
     double value2;
     double result;
@@ -118,7 +118,7 @@ class Divide implements Operator, Saver {
 
 class Exporter {
 
-    public void save(Saver s) throws IOException {
+    public void save(hasresult s) throws IOException {
         File txt = new File("result.txt");
         FileWriter fw = new FileWriter(txt);
         PrintWriter pw = new PrintWriter(fw);
