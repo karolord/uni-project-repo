@@ -1,0 +1,1 @@
+curl wttr.in/sulaymaniah?0T | awk 'NR==4{print $2 $3}NR==6{print $2 $3}' | tee /tmp/weather.txt
