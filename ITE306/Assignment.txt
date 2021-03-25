@@ -1,0 +1,5 @@
+Karo Rasool
+ITE 306 ASSIGNMENT
+
+1-	Sudo useradd -m -g root -G tty,video,adm
+    
