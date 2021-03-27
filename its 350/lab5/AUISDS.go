@@ -2,6 +2,11 @@ package main
 import ("fmt")
 
 func main() {
+	var a auis
+	a.Set(5,4)
+	fmt.Println()
+	
+
 }
 // original in go
 type auis struct{
@@ -24,14 +29,13 @@ type stack struct{
 	counter int	
 }
 func (s *stack) push(x int){
-
-     s.set(s.counter,x)
+     s.a.set(s.counter,x)
 	s.counter++
 }
 
 func (s *stack) pop() int{
-	x := s.a.get[s.counter-1]
-	s.a.set(s.counter-1,0)
 	s.counter--
+	x := s.a.get[s.counter]
+	s.a.set(s.counter,0)
 	return x
 }

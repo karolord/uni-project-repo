@@ -80,6 +80,7 @@ func Mingpa(s [100]students) int {
 	}
 	return index
 }
+
 func AssignStudentstack(s *[5]students) {
 	for i := 0; i < 2; i++ {
 		s[i].Push()
