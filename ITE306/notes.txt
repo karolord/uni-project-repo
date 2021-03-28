@@ -87,3 +87,4 @@ sudo chmod g+s file
 bash dont terminate wait for my children 
 echo $1-9 will return the arguments inputed
 look up double $$ sign
+compiler vs interpreter
