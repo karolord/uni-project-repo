@@ -116,4 +116,16 @@ Lecture 16/2 michael chp1
 
     lab 6
     undo functionality
+    immutable objects
+
+
+    march 28
+    event driven programming
+    interface comparable java
+    equals design pattern java
+    objects and . dot operator
+    graph theory
+    algorithms
+    mathmatics for AI
+    probability
     

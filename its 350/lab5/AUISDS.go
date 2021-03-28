@@ -5,7 +5,6 @@ func main() {
 	var a auis
 	a.Set(5,4)
 	fmt.Println()
-	
 
 }
 // original in go
