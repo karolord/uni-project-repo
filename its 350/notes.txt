@@ -117,3 +117,5 @@ array is just a pointer to a memory address
     structs and methods 
     when inserting store the variables to make it o(1)
     data structures and math
+FOCUS MID POINTER
+    

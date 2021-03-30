@@ -128,4 +128,4 @@ Lecture 16/2 michael chp1
     algorithms
     mathmatics for AI
     probability
-    
+    Observer design pattern
