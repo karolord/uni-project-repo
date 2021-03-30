@@ -119,6 +119,9 @@ footer a {
         border-radius: 0;
         background-color: transparent;
     }
+    h1 {
+        text-align: center;
+    }
     main {
         clear: left;
         margin-top: 4em;
