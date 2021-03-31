@@ -7,36 +7,21 @@ type Student struct {
 	GPA  float64
 	ID   int
 	Node *Student
+	prev *Student
 }
 
 var head *Student
 
-func addtoend(n string, g float64, i int) {
-	s := Student{n, g, i, nil}
-	if head == nil {
-		head = &s
-	} else {
-		c := head
-		for c != nil {
-			c = c.Node
-		}
-		c.Node = &s
-	}
-}
 func main() {
-	addtoend("ali", 3.2, 155555)
-	addtoend("karo", 3.22, 55555)
 
 }
-func addtostart(n string, g float64, i int) {
-	s := Student{n, g, i, nil}
-	s.Node = head
-	head = &s
-}
+
 func addafter(n string, g float64, i int, std *Student) {
-	s := Student{n, g, i, nil}
+	s := Student{n, g, i, nil, nil}
 	s.Node = std.Node
+	s.prev = std
 	std.Node = &s
+	s.Node.prev = &s
 
 }
 func removefirst() {
@@ -49,10 +34,6 @@ func removeafter(std *Student) {
 	}
 }
 func removestd(std *Student) {
-	temp := head
-	for temp.Node != std {
-		temp = temp.Node
-	}
-	temp.Node = std.Node
-
+	std.prev.Node = std.Node
+	std.Node.prev = std.prev
 }
