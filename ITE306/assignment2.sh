@@ -19,6 +19,9 @@ sudo find /tmp -type f | wc -l
 
 #requirement 5
 echo $1 $2 $3 $4 $5 $6 $7 $8 $9
-#print args
-argnum = echo $1 $2 $3 $4 $5 $6 $7 $8 $9 | wc -l 
-# echo $argnum
+var=$(echo $1 $2 $3 $4 $5 $6 $7 $8 $9 | wc -w)
+if [[ $var -lt 3 ]]
+then
+echo Error
+exit
+fi
