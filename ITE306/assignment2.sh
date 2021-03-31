@@ -19,4 +19,6 @@ sudo find /tmp -type f | wc -l
 
 #requirement 5
 echo $1 $2 $3 $4 $5 $6 $7 $8 $9
-echo $1 $2 $3 $4 $5 $6 $7 $8 $9 | wc -l
+#print args
+argnum = echo $1 $2 $3 $4 $5 $6 $7 $8 $9 | wc -l 
+# echo $argnum
