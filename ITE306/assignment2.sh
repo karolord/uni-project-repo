@@ -11,8 +11,11 @@ alias ite306="yes AUIS"
 
 
 #requirement3
-echo "Karo Rasool and Kosar Aziz" > ite306-$HOSTNAME.txt
+echo "Karo Rasool and Kosar Aziz" > /home/ite306-$HOSTNAME.txt
 
 #requirement4
-cd /tmp && ls -ali | wc -l
+sudo find /tmp -type f | wc -l
+# citation find manual
 
+#requirement 5
+echo $1 $2 $3 $4 $5 $6 $7 $8 $9
