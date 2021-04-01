@@ -121,3 +121,5 @@ FOCUS MID POINTER
 queue and slices
 save original copy
 0 - 100 grades
+convex optimization
+machine learning
