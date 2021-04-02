@@ -127,8 +127,10 @@ func Requirement7(){
 	mid := len(queue)/2
 	counters := 0
 	if x%2 == 1{
-		for i := 0; i < x+3; i++ {
-			if i == mid + 1 || i == mid + 2 || i == mid - 1 || i == mid - 2 {
+		for i := 0; i < x; i++ {
+			if i == mid + 1 || i == mid - 1 {
+				tmp[counters] = slice[i]
+				counters++
 				tmp[counters] = slice[i]
 				counters++
 			}
@@ -136,9 +138,12 @@ func Requirement7(){
 			counters++
 		}
 	}else {
-		for i := 0; i < x + 3; i++ {
-			fmt.Println(i)
-		if i == mid + 2 || i == mid + 3 || i == mid - 1 || i == mid - 2 {
+		mid--
+		for i := 0; i < x; i++ {
+		if i == mid + 2 || i == mid - 1{
+
+			tmp[counters] = slice[i]
+			counters++
 			tmp[counters] = slice[i]
 			counters++
 		}
