@@ -8,7 +8,7 @@ var slicecounter int
 var x int
 func main() {
 	Requirement1()
-	Requirement4()
+	Requirement6()
 
 }
 func enqueue(x int){
@@ -90,6 +90,14 @@ func mergesort(input []int) []int  {
 	return merge(mergesort(left), mergesort(right))
 }
 func insertionsort(input []int){
-	copyqueue := queue
-	temp := make([]int,x) 	
+	
+}
+
+
+func Requirement6(){
+	mid := len(queue)/2
+	if len(queue)%2 == 0{
+		
+	}
+
 }
