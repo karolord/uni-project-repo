@@ -11,8 +11,8 @@ func main() {
 	Requirement6()
 
 }
-func enqueue(x int){
-	queue[counter] = x
+func enqueue(x int,queues []int) {
+	queues[counter] = x
 	counter++ 
 }
 func dequeue() int{
@@ -48,7 +48,7 @@ func Requirement2(grade int) {
 }
 
 func Requirement3(grade int) {
-	enqueue(grade)
+	enqueue(grade,queue)
 }
 func Requirement4() {
 	copyslice := slice
@@ -95,12 +95,15 @@ func insertionsort(input []int){
 
 
 func Requirement6(){
+	copyqueue := make([]int,x-4)
 	mid := len(queue)/2
 	if len(queue)%2 == 1{
 		mid++
 	}
 	for i := 0; i < len(queue); i++ {
-		//delete the four mid values here lmao
+		tmp := dequeue()
+		if i == mid + 1 || i == mid + 2|| i == mid-1 || i == mid -2 {continue}
+		enqueue(tmp,copyqueue)
 	}
-
+	fmt.Println(copyqueue)
 }
