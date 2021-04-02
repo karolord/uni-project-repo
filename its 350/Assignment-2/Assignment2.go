@@ -7,8 +7,7 @@ var counter int
 var x int
 func main() {
 	Requirement1()
-	fmt.Println(slice)
-	fmt.Println(mergeSort(slice))
+	Requirement4()
 }
 func enqueue(x int){
 	queue = append(queue,x)
@@ -36,7 +35,6 @@ func Requirement1() {
 			fmt.Scanln(&grade)
 		}
 		Requirement2(grade)
-		fmt.Println(len(slice))
 		Requirement3(grade)
 		
 	}
@@ -98,4 +96,8 @@ func merge(left, right []int) (result []int) {
     }
      
     return
+}
+
+func Requirement4() {
+	fmt.Println(mergeSort(slice))
 }
