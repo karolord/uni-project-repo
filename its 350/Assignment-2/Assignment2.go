@@ -90,9 +90,6 @@ func mergesort(input []int) []int  {
 	return merge(mergesort(left), mergesort(right))
 }
 func insertionsort(input []int){
-	
-	for i := 0; i < x; i++{
-
-	}
-	
+	copyqueue := queue
+	temp := make([]int,x) 	
 }
