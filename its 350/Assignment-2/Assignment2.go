@@ -95,15 +95,29 @@ func insertionsort(input []int){
 
 
 func Requirement6(){
+	if(len(queue) < 5) {
+		return
+	}
+	counter = 0
 	copyqueue := make([]int,x-4)
 	mid := len(queue)/2
-	if len(queue)%2 == 1{
-		mid++
-	}
-	for i := 0; i < len(queue); i++ {
-		tmp := dequeue()
-		if i == mid + 1 || i == mid + 2|| i == mid-1 || i == mid -2 {continue}
-		enqueue(tmp,copyqueue)
+	if len(queue)%2 == 1 {	
+		for i := 0; i <= len(queue); i++ {
+			tmp := dequeue()
+			if i == mid + 1 || i == mid + 2 || i == mid - 1 || i == mid - 2 {
+				continue
+			}
+			enqueue(tmp,copyqueue)
+		}
+	} else {
+		mid--
+		for i := 0; i =< len(queue); i++ {
+			tmp := dequeue()
+			if i == mid + 2 || i == mid + 3 || i == mid - 1 || i == mid - 2 {
+				continue
+			}
+			enqueue(tmp,copyqueue)
+		}
 	}
 	fmt.Println(copyqueue)
 }
