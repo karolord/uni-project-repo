@@ -102,7 +102,7 @@ func Requirement6(){
 	copyqueue := make([]int,x-4)
 	mid := len(queue)/2
 	if len(queue)%2 == 1 {	
-		for i := 0; i <= len(queue); i++ {
+		for i := 0; i < x; i++ {
 			tmp := dequeue()
 			if i == mid + 1 || i == mid + 2 || i == mid - 1 || i == mid - 2 {
 				continue
@@ -111,8 +111,9 @@ func Requirement6(){
 		}
 	} else {
 		mid--
-		for i := 0; i =< len(queue); i++ {
+		for i := 0; i < x; i++ {
 			tmp := dequeue()
+			fmt.Println(i)
 			if i == mid + 2 || i == mid + 3 || i == mid - 1 || i == mid - 2 {
 				continue
 			}
