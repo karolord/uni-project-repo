@@ -96,8 +96,11 @@ func insertionsort(input []int){
 
 func Requirement6(){
 	mid := len(queue)/2
-	if len(queue)%2 == 0{
-		
+	if len(queue)%2 == 1{
+		mid++
+	}
+	for i := 0; i < len(queue); i++ {
+		//delete the four mid values here lmao
 	}
 
 }
