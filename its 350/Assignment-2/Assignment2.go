@@ -3,14 +3,16 @@ package main
 import "fmt"
 var slice []int
 var queue []int
+var slicecounter int
 var counter int
 var x int
 func main() {
 	Requirement1()
-	Requirement4()
+	fmt.Println(slice)
+	fmt.Println(mergeSort(slice))
 }
 func enqueue(x int){
-	queue = append(queue,x)
+	queue[counter] = x
 }
 func dequeue() int{
 	value := queue[0]
@@ -22,7 +24,6 @@ func Requirement1() {
 	fmt.Println("Please enter a number:")
 	fmt.Scanln(&x)
 	slice = make([]int,x,x)
-	fmt.Println(len(slice))
 	queue = make([]int,x,x)
 	
 	var grade int
@@ -41,7 +42,7 @@ func Requirement1() {
 }
 
 func Requirement2(grade int) {
-	slice[counter] = grade
+	slice[slicecounter] = grade
 	counter++
 }
 func Requirement3(grade int) {
@@ -96,8 +97,4 @@ func merge(left, right []int) (result []int) {
     }
      
     return
-}
-
-func Requirement4() {
-	fmt.Println(mergeSort(slice))
 }
