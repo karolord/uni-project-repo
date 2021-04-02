@@ -8,7 +8,7 @@ var slicecounter int
 var x int
 func main() {
 	Requirement1()
-	Requirement6()
+	Requirement7()
 
 }
 func enqueue(x int,queues []int) {
@@ -121,4 +121,30 @@ func Requirement6(){
 		}
 	}
 	fmt.Println(copyqueue)
+}
+func Requirement7(){
+	tmp := make([]int,x+4)
+	mid := len(queue)/2
+	counters := 0
+	if x%2 == 1{
+		for i := 0; i < x+3; i++ {
+			if i == mid + 1 || i == mid + 2 || i == mid - 1 || i == mid - 2 {
+				tmp[counters] = slice[i]
+				counters++
+			}
+			tmp[counters] = slice[i]
+			counters++
+		}
+	}else {
+		for i := 0; i < x + 3; i++ {
+			fmt.Println(i)
+		if i == mid + 2 || i == mid + 3 || i == mid - 1 || i == mid - 2 {
+			tmp[counters] = slice[i]
+			counters++
+		}
+		tmp[counters] = slice[i]
+		counters++
+	}
+	}
+	fmt.Println(tmp[0:])
 }
