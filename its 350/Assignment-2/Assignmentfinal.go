@@ -1,3 +1,13 @@
+/*Kosar Aziz kn18011@auis.edu.krd
+Karo Rasool kk19046@auis.edu.krd*/
+
+/*
+Requirement 1 Time Complexity:
+Requirement 2 Time Complexity:
+Requirement 3 Time Complexity:
+Requirement 5 Time Complexity:
+Requirement 6 Time Complexity:
+*/
 package main
 
 import "fmt"
