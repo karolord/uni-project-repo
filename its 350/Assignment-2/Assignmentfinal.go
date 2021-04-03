@@ -71,7 +71,8 @@ func Requirement4() {
 func Requirement5() {
 	queue.insertionsort()
 }
-func (q *Queue) insertionsort(){
+
+func (q *Queue) Insertionsort(){
 	copyqueue := q
 	tmpslice := make([]int, x)
 	for i := 0; i < x; i++ {
@@ -90,6 +91,7 @@ func (q *Queue) insertionsort(){
 	fmt.Println("Requirement 5 (Insertion Sort):")
 	fmt.Println(copyqueue.value[0:])
 }
+
 func Merge(left []int, right []int) []int {
 	result := make([]int, len(right)+len(left))
 	i := 0
