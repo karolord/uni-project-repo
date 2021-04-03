@@ -10,7 +10,7 @@ var x int
 func main() {
 	Requirement1()
 	Requirement4()
-	queue.Requirement5()
+	Requirement5()
 	Requirement6()
 	Requirement7()
 }
@@ -68,7 +68,10 @@ func Requirement4() {
 	fmt.Println(Mergesort(copyslice))
 }
 
-func (q *Queue) Requirement5() {
+func Requirement5() {
+	queue.insertionsort()
+}
+func (q *Queue) insertionsort(){
 	copyqueue := q
 	tmpslice := make([]int, x)
 	for i := 0; i < x; i++ {
@@ -87,7 +90,6 @@ func (q *Queue) Requirement5() {
 	fmt.Println("Requirement 5 (Insertion Sort):")
 	fmt.Println(copyqueue.value[0:])
 }
-
 func Merge(left []int, right []int) []int {
 	result := make([]int, len(right)+len(left))
 	i := 0
