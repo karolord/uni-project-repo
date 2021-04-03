@@ -16,8 +16,8 @@ func main() {
 }
 
 type Queue struct {
-	value   []int // 1
-	counter int   // 1
+	value   []int
+	counter int
 }
 
 func (q *Queue) Enqueue(input int) {
