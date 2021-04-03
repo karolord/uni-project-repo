@@ -1,31 +1,40 @@
 package main
-
 import "fmt"
-var slice []int
-var queue []int
-var counter int
-var slicecounter int
-var x int
+
+	var queue Queue
+	var slice []int
+	var slicecounter int
+	var x int
 func main() {
 	Requirement1()
+	Requirement4()
+	Requirement6()
 	Requirement7()
 }
-func enqueue(x int,queues []int) {
-	queues[counter] = x
-	counter++ 
-}
-func dequeue() int{
-	value := queue[0]
-	queue = queue[1:]
-	return value
+
+type Queue struct {
+	value []int
+	counter int
 }
 
+func (q *Queue) Enqueue(input int) {
+	q.value[q.counter] = input
+	q.counter++
+}
+
+func (q *Queue) Dequeue() int{
+	tmp := q.value[0]
+	for i := 0; i < len(q.value)-1 ; i++{
+		q.value[i] = q.value[i+1]
+	}
+	q.counter--
+	return tmp
+}
 func Requirement1() {
 	fmt.Println("Please enter a number:")
 	fmt.Scanln(&x)
 	slice = make([]int,x,x)
-	queue = make([]int,x,x)
-
+	queue.value = make([]int,x,x)
 	var grade int
 	for i := 0; i < x; i++ {
 		fmt.Println("Enter the grade:")
@@ -40,17 +49,17 @@ func Requirement1() {
 		
 	}
 }
-
 func Requirement2(grade int) {
 	slice[slicecounter] = grade
 	slicecounter++
 }
 
 func Requirement3(grade int) {
-	enqueue(grade,queue)
+	queue.Enqueue(grade)
 }
 func Requirement4() {
 	copyslice := slice
+	fmt.Println("Requirement 4 (Merge sort):")
 	fmt.Println(mergesort(copyslice))
 }
 func merge(left []int, right []int) []int {
@@ -88,42 +97,37 @@ func mergesort(input []int) []int  {
 	right := input[mid:]
 	return merge(mergesort(left), mergesort(right))
 }
-func insertionsort(input []int){
-	
-}
-
-
 func Requirement6(){
-	if(len(queue) < 5) {
+	if(len(queue.value) < 5) {
 		return
 	}
-	counter = 0
-	copyqueue := make([]int,x-4)
-	mid := len(queue)/2
-	if len(queue)%2 == 1 {	
+	var copyqueue Queue
+	copyqueue.value = make([]int,x-4)
+	mid := len(queue.value)/2
+	if len(queue.value)%2 == 1 {	
 		for i := 0; i < x; i++ {
-			tmp := dequeue()
+			tmp := queue.Dequeue()
 			if i == mid + 1 || i == mid + 2 || i == mid - 1 || i == mid - 2 {
 				continue
 			}
-			enqueue(tmp,copyqueue)
+			copyqueue.Enqueue(tmp)
 		}
 	} else {
 		mid--
 		for i := 0; i < x; i++ {
-			tmp := dequeue()
-			fmt.Println(i)
+			tmp := queue.Dequeue()
 			if i == mid + 2 || i == mid + 3 || i == mid - 1 || i == mid - 2 {
 				continue
 			}
-			enqueue(tmp,copyqueue)
+			copyqueue.Enqueue(tmp)
 		}
 	}
-	fmt.Println(copyqueue)
+	fmt.Println("Requirement 6:")
+	fmt.Println(copyqueue.value[0:])
 }
 func Requirement7(){
 	tmp := make([]int,x+4)
-	mid := len(queue)/2
+	mid := len(slice)/2
 	counters := 0
 	if x%2 == 1{
 		for i := 0; i < x; i++ {
@@ -150,5 +154,6 @@ func Requirement7(){
 		counters++
 	}
 	}
+	fmt.Println("Requirement 7:")
 	fmt.Println(tmp[0:])
 }
