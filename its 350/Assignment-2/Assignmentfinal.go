@@ -163,14 +163,21 @@ func Requirement7(){
 }
 func (q *Queue)Insertionsort(){
 	copyqueue := q
+	tmpslice := make([]int,x)
+	for i := 0; i < x; i++ {
+		tmpslice[i] = copyqueue.Dequeue()
+	}
 	for i := 0; i < x; i++ {
 		for j := 0; j < i; j++ {
-			if copyqueue.value[j]<copyqueue.value[i]{
-				copyqueue.value[j],copyqueue.value[i] = copyqueue.value[i],copyqueue.value[j]
+			if tmpslice[i] > tmpslice[j] {
+				tmpslice[i],tmpslice[j] = tmpslice[j],tmpslice[i]	
 			}
 		}
 	}
-
+	
+	for i := 0; i < x; i++ {
+		copyqueue.Enqueue(tmpslice[i])
+	}
 	fmt.Println("Requirement 5:")
 	fmt.Println(copyqueue.value[0:])
 }
