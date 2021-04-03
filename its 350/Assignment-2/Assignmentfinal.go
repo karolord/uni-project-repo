@@ -8,6 +8,7 @@ import "fmt"
 func main() {
 	Requirement1()
 	Requirement4()
+	queue.Insertionsort()
 	Requirement6()
 	Requirement7()
 }
@@ -61,6 +62,9 @@ func Requirement4() {
 	copyslice := slice
 	fmt.Println("Requirement 4 (Merge sort):")
 	fmt.Println(mergesort(copyslice))
+}
+func Requirement5(){
+
 }
 func merge(left []int, right []int) []int {
 	result := make([]int,len(right)+len(left))
@@ -156,4 +160,17 @@ func Requirement7(){
 	}
 	fmt.Println("Requirement 7:")
 	fmt.Println(tmp[0:])
+}
+func (q *Queue)Insertionsort(){
+	copyqueue := q
+	for i := 0; i < x; i++ {
+		for j := 0; j < i; j++ {
+			if copyqueue.value[j]<copyqueue.value[i]{
+				copyqueue.value[j],copyqueue.value[i] = copyqueue.value[i],copyqueue.value[j]
+			}
+		}
+	}
+
+	fmt.Println("sort")
+	fmt.Println(copyqueue.value[0:])
 }
