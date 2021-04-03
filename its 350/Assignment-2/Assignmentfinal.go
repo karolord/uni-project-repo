@@ -5,7 +5,7 @@ Karo Rasool kk19046@auis.edu.krd*/
 Requirement 1: T(n) = 9n^2 + 9n + 21, O(n) = n^2
 Requirement 2 T(n) = 8, O(n) = 1
 Requirement 3 T(n) = 9, O(n) = 1
-Requirement 5 T(n) = , O(n) =
+Requirement 5 T(n) = , O(n) = n^2
 Requirement 6 T(n) = , O(n) =
 */
 package main
@@ -89,7 +89,7 @@ func (q *Queue) Insertionsort() {
 		tmpslice[i] = copyqueue.Dequeue() // 3n
 	}
 	for i := 0; i < x; i++ { // 1, 3n + 3, 3n
-		for j := 0; j < i; j++ { // n, 3n^2 + 3^n, 3n^2
+		for j := 0; j < i; j++ { // n, 3n^2 + 3n, 3n^2
 			if tmpslice[i] > tmpslice[j] { // 5n^2
 				tmpslice[i], tmpslice[j] = tmpslice[j], tmpslice[i] // 6n^2
 			}
