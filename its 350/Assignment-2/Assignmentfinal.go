@@ -5,7 +5,7 @@ Karo Rasool kk19046@auis.edu.krd*/
 Requirement 1: T(n) = 9n^2 + 9n + 21, O(n) = n^2
 Requirement 2 T(n) = 8, O(n) = 1
 Requirement 3 T(n) = 9, O(n) = 1
-Requirement 5 T(n) = , O(n) = n^2
+Requirement 5 T(n) = 17n^2 + 27n + 29, O(n) = n^2
 Requirement 6 T(n) = , O(n) =
 */
 package main
