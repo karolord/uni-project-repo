@@ -174,7 +174,6 @@ func (q *Queue)Insertionsort(){
 			}
 		}
 	}
-	
 	for i := 0; i < x; i++ {
 		copyqueue.Enqueue(tmpslice[i])
 	}
