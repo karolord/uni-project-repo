@@ -171,6 +171,6 @@ func (q *Queue)Insertionsort(){
 		}
 	}
 
-	fmt.Println("sort")
+	fmt.Println("Requirement 5:")
 	fmt.Println(copyqueue.value[0:])
 }
