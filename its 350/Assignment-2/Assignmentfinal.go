@@ -5,10 +5,11 @@ import "fmt"
 	var slice []int
 	var slicecounter int
 	var x int
+
 func main() {
 	Requirement1()
 	Requirement4()
-	queue.Insertionsort()
+	queue.Requirement5()
 	Requirement6()
 	Requirement7()
 }
@@ -63,10 +64,28 @@ func Requirement4() {
 	fmt.Println("Requirement 4 (Merge sort):")
 	fmt.Println(mergesort(copyslice))
 }
-func Requirement5(){
 
+func (q *Queue)Requirement5(){
+	copyqueue := q
+	tmpslice := make([]int,x)
+	for i := 0; i < x; i++ {
+		tmpslice[i] = copyqueue.Dequeue()
+	}
+	for i := 0; i < x; i++ {
+		for j := 0; j < i; j++ {
+			if tmpslice[i] > tmpslice[j] {
+				tmpslice[i],tmpslice[j] = tmpslice[j],tmpslice[i]	
+			}
+		}
+	}
+	for i := 0; i < x; i++ {
+		copyqueue.Enqueue(tmpslice[i])
+	}
+	fmt.Println("Requirement 5:")
+	fmt.Println(copyqueue.value[0:])
 }
-func merge(left []int, right []int) []int {
+
+func Merge(left []int, right []int) []int {
 	result := make([]int,len(right)+len(left))
 	i := 0
 	j := 0
@@ -92,15 +111,17 @@ func merge(left []int, right []int) []int {
 	}
 	return result 
 }
-func mergesort(input []int) []int  {
+
+func Mergesort(input []int) []int  {
 	if len(input) == 1{
 		return input
 	}
 	mid := len(input)/2
 	left := input[:mid]
 	right := input[mid:]
-	return merge(mergesort(left), mergesort(right))
+	return Merge(Mergesort(left), Mergesort(right))
 }
+
 func Requirement6(){
 	if(len(queue.value) < 5) {
 		return
@@ -129,6 +150,7 @@ func Requirement6(){
 	fmt.Println("Requirement 6:")
 	fmt.Println(copyqueue.value[0:])
 }
+
 func Requirement7(){
 	tmp := make([]int,x+4)
 	mid := len(slice)/2
@@ -144,7 +166,7 @@ func Requirement7(){
 			tmp[counters] = slice[i]
 			counters++
 		}
-	}else {
+	} else {
 		mid--
 		for i := 0; i < x; i++ {
 		if i == mid + 2 || i == mid - 1{
@@ -160,23 +182,4 @@ func Requirement7(){
 	}
 	fmt.Println("Requirement 7:")
 	fmt.Println(tmp[0:])
-}
-func (q *Queue)Insertionsort(){
-	copyqueue := q
-	tmpslice := make([]int,x)
-	for i := 0; i < x; i++ {
-		tmpslice[i] = copyqueue.Dequeue()
-	}
-	for i := 0; i < x; i++ {
-		for j := 0; j < i; j++ {
-			if tmpslice[i] > tmpslice[j] {
-				tmpslice[i],tmpslice[j] = tmpslice[j],tmpslice[i]	
-			}
-		}
-	}
-	for i := 0; i < x; i++ {
-		copyqueue.Enqueue(tmpslice[i])
-	}
-	fmt.Println("Requirement 5:")
-	fmt.Println(copyqueue.value[0:])
 }
