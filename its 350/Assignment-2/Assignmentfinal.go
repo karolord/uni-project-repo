@@ -69,7 +69,7 @@ func Requirement4() {
 }
 
 func Requirement5() {
-	queue.insertionsort()
+	queue.Insertionsort()
 }
 
 func (q *Queue) Insertionsort(){
