@@ -2,11 +2,11 @@
 Karo Rasool kk19046@auis.edu.krd*/
 
 /*
-Requirement 1 Time Complexity: 9n^2 + 9n + 21
-Requirement 2 Time Complexity: 8
-Requirement 3 Time Complexity:
-Requirement 5 Time Complexity:
-Requirement 6 Time Complexity:
+Requirement 1: T(n) = 9n^2 + 9n + 21, O(n) = n^2
+Requirement 2 T(n) = 8, O(n) = 1
+Requirement 3 T(n) = 9, O(n) = 1
+Requirement 5 T(n) = , O(n) =
+Requirement 6 T(n) = , O(n) =
 */
 package main
 
