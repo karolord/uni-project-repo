@@ -3,11 +3,11 @@ Karo Rasool kk19046@auis.edu.krd*/
 
 /*
 Requirement 1: T(n) = 9n^2 + 9n + 21, Big O = O(n^2)
-Requirement 2 T(n) = 8, Big O = O(1)
-Requirement 3 T(n) = 9, Big O = O(1)
-Requirement 5 T(n) = 17n^2 + 27n + 29, Big O = O(n^2)
-Requirement 6 T(n) = 81n + 71, Big O = O(n)
-Requirement 7 T(n) = 72n + 28, Big O = O(n)
+Requirement 2: T(n) = 8, Big O = O(1)
+Requirement 3: T(n) = 9, Big O = O(1)
+Requirement 5: T(n) = 17n^2 + 27n + 29, Big O = O(n^2)
+Requirement 6: T(n) = 81n + 71, Big O = O(n)
+Requirement 7: T(n) = 72n + 28, Big O = O(n)
 */
 package main
 
