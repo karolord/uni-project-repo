@@ -6,9 +6,9 @@ public class mediator {
     public static LinkedList<artist> artists = new LinkedList<artist>();
     public static LinkedList<song> songs = new LinkedList<song>();
     public static LinkedList<composer> composers = new LinkedList<composer>();
-    public static favorites favorites = new favorites();
+    public static favorites favorite = new favorites();
 
-    public static void getinputs() {
+    public static void getInputs() {
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < 40; i++) {
             song song = new song();
