@@ -6,10 +6,6 @@ public class artist {
     private String artistName;
     private LinkedList<song> songs = new LinkedList<song>();
 
-    public void printArtist() {
-
-    }
-
     public LinkedList<song> getSongs() {
         return this.songs;
     }
