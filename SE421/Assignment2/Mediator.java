@@ -12,7 +12,7 @@ public class mediator {
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < 40; i++) {
             song song = new song();
-            song artist = new artist();
+            artist artist = new artist();
             System.out.println("please enter the name of the song");
             song.setName(input.nextLine());
             System.out.println("please enter the song length in seconds");
@@ -21,7 +21,6 @@ public class mediator {
             song.setAlbum(input.nextLine());
             mediator.songs.add(song);
             System.out.println("please enter the artist name");
-            artist.set(input.nextLine());
 
         }
     }

@@ -5,10 +5,8 @@ import java.util.*;
 public class main {
 
     public static void main(String[] args) {
-        LinkedList<Artist> artists = new LinkedList<Artist>();
+        LinkedList<artist> artists = new LinkedList<artist>();
         LinkedList<song> songs = new LinkedList<song>();
-        getinputs(songs);
     }
 
-   
 }
