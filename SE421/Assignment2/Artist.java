@@ -1,8 +1,7 @@
 package SE421.Assignment2;
 
-public lass artist {
+public class artist {
     private String artistname;
-    pub
 
         return this.artistName;
     }
