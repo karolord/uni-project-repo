@@ -1,6 +1,6 @@
 package SE421.Assignment2;
 
-public class Artist {
+public class artist {
     private String artistname;
 
     public String getArtistname() {
