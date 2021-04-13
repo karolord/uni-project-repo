@@ -55,14 +55,27 @@ public class mediator {
 
     public void menu() {
         while (true) {
-            System.out.println("1.Print table of all songs or a specific artist");
-            System.out.println("2.Delete a song");
-            System.out.println("3.add a favorite song");
-            System.out.println("4.add a favorite artist");
+            System.out.println("1.Print table of all songs");
+            System.out.println("2.Print table of a specific artist");
+            System.out.println("3.Delete a song");
+            System.out.println("4.add favorites");
             System.out.println("5.print your favorite arists songs");
             System.out.println("6.Quit life");
-
         }
-
     }
+
+    public void printSongs() {
+        System.out.println("Title\tLength\tAlbum\tComposers\t\tArtists");
+        for (int i = 1; i < songs.size(); i++) {
+            songs.get(i - 1).print();
+        }
+    }
+
+    public void printArtist() {
+        System.out.println("Title\tLength\tAlbum\tComposers\t\tArtists");
+        for (int i = 1; i < songs.size(); i++) {
+            songs.get(i - 1).print();
+        }
+    }
+
 }

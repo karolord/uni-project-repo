@@ -9,6 +9,14 @@ public class song {
     private LinkedList<artist> artists = new LinkedList<artist>();
     private LinkedList<String> composers = new LinkedList<String>();
 
+    public void print() {
+        System.out.printf(name + " " + length + " " + album + " " + composers);
+        for (artist artist : artists) {
+            System.out.printf(artist.getArtistName());
+        }
+        System.out.println();
+    }
+
     public LinkedList<String> getComposers() {
         return this.composers;
     }
