@@ -1,14 +1,14 @@
 package SE421.Assignment2;
 
 public class composer {
-    private String composername;
+    private String composerName;
 
-    public String getComposername() {
-        return this.composername;
+    public String getComposerName() {
+        return this.composerName;
     }
 
-    public void setComposername(String composername) {
-        this.composername = composername;
+    public void setComposerName(String composerName) {
+        this.composerName = composerName;
     }
 
 }
