@@ -1,14 +1,14 @@
 package SE421.Assignment2;
 
-public class artist {
+public lass artist {
     private String artistname;
+    pub
 
-    public String getArtistname() {
-        return this.artistname;
+        return this.artistName;
     }
 
-    public void setArtistname(String artistname) {
-        this.artistname = artistname;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
     }
 
 }
