@@ -6,15 +6,17 @@ public class song {
     private String name;
     private int length;
     private String album;
-    private LinkedList<artist> artists = new LinkedList<artist>();
+    private mediator2 artists;
     private LinkedList<String> composers = new LinkedList<String>();
 
     public void print() {
         System.out.printf(name + " " + length + " " + album + " " + composers);
-        for (artist artist : artists) {
-            System.out.printf(artist.getArtistName());
-        }
         System.out.println();
+    }
+
+    public void addArtists(artist artist) {
+        mediator2 artists = new mediator2();
+        mediator2.setArtists(artist);
     }
 
     public LinkedList<String> getComposers() {
@@ -23,14 +25,6 @@ public class song {
 
     public void setComposers(String composer) {
         this.composers.add(composer);
-    }
-
-    public LinkedList<artist> getArtists() {
-        return this.artists;
-    }
-
-    public void setArtists(artist artist) {
-        this.artists.add(artist);
     }
 
     public int getLength() {
