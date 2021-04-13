@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         LinkedList<song> songs = new LinkedList<song>();
+        LinkedList<Artist> artists = new LinkedList<Artist>();
+
         getinputs(songs);
 
     }
