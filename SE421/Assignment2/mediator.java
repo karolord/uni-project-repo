@@ -1,6 +1,7 @@
 package SE421.Assignment2;
 
 import java.util.*;
+import java.util.Iterator;
 
 public class mediator {
     public static LinkedList<artist> artists = new LinkedList<artist>();
@@ -21,7 +22,10 @@ public class mediator {
             song.setAlbum(input.nextLine());
             mediator.songs.add(song);
             System.out.println("please enter the artist name");
-
+            artist.setArtistName(input.nextLine());
+            for(Iterator x = mediator.artists.iterator(); x.hasNext();){
+                if( (artist)x.next().artistname.equals(artist.name) )
+            }
         }
     }
 }
