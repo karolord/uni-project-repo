@@ -3,26 +3,30 @@ package SE421.Assignment2;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
 
-        song songs[] = new song[40];
+    public static void main(String[] args) {
+        LinkedList<song> songs = new LinkedList<song>();
         getinputs(songs);
-        for (int i = 0; i < 5; i++) {
-            System.out.println(songs[i].getName());
-        }
+
     }
 
-    public static void getinputs(song songs[]) {
+    public static void getinputs(LinkedList<song> songs) {
         Scanner input = new Scanner(System.in);
-        for (int i = 0; i < 5; i++) {
-            songs[i] = new song();
+        for (int i = 0; i < 40; i++) {
+            song song = new song();
             System.out.println("please enter the name of the song");
-            songs[i].setName(input.nextLine());
-
-            System.out.println("please enter the song length in seconds");
-            songs[i].setLength(input.nextInt());
-            System.out.println("please enter the album name");
-            songs[i].setAlbum(input.nextLine());
+            song.setName(input.nextLine());
+            /*
+             * System.out.println("please enter the song length in seconds");
+             * song.setLength(input.nextInt());
+             * System.out.println("please enter the album name");
+             * song.setAlbum(input.nextLine());
+             */
+            songs.add(song);
+            System.out.println("Enter 0 to stop adding songs and any other nummber to continue");
+            int x = input.nextInt();
+            if (x == 0)
+                break;
 
         }
 

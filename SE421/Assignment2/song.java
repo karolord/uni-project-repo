@@ -3,10 +3,11 @@ package SE421.Assignment2;
 import java.util.*;
 
 public class song {
-    private int length;
     private String name;
-    private String album;
 
+    /*
+     * private int length; private String album;
+     */
     public int getLength() {
         return this.length;
     }
