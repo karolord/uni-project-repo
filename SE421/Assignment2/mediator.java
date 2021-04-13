@@ -52,4 +52,17 @@ public class mediator {
                 break;
         }
     }
+
+    public void menu() {
+        while (true) {
+            System.out.println("1.Print table of all songs");
+            System.out.println("2.Print table for a specific artist");
+            System.out.println("3.Delete a song");
+            System.out.println("4.add a favorite song");
+            System.out.println("5.add a favorite artist");
+            System.out.println("6.print your favorite arists songs");
+            System.out.println("7.Quit life");
+        }
+
+    }
 }
