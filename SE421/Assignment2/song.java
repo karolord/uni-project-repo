@@ -6,6 +6,24 @@ public class song {
     private String name;
     private int length;
     private String album;
+    private LinkedList<artist> artists = new LinkedList<artist>();
+    private LinkedList<String> composers = new LinkedList<String>();
+
+    public LinkedList<String> getComposers() {
+        return this.composers;
+    }
+
+    public void setComposers(String composer) {
+        this.composers.add(composer);
+    }
+
+    public LinkedList<artist> getArtists() {
+        return this.artists;
+    }
+
+    public void setArtists(artist artist) {
+        this.artists.add(artist);
+    }
 
     public int getLength() {
         return this.length;
