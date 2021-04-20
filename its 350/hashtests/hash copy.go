@@ -67,6 +67,19 @@ func (l *Linkedlist) deleteLinkedlist(value string) {
 	}
 }
 
+func (h *Hashmap) sortlist() {
+	for i := range h.hmap {
+		if h.hmap[i].head != nil {
+			prevNode := h.hmap[i].head
+			for prevNode.next != nil {
+				if int(prevNode.next.name[0]) <= int(prevNode.name[0]) {
+					*prevNode, *prevNode.next = *prevNode.next, *prevNode
+				}
+				prevNode = prevNode.next
+			}
+		}
+	}
+}
 func main() {
 	n = 4
 	test := Initalizemap()
@@ -75,5 +88,6 @@ func main() {
 	test.Inserthash("bA")
 	test.Inserthash("aD")
 	test.Inserthash("bC")
+	test.sortlist()
 	fmt.Println(test)
 }
