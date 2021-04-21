@@ -13,6 +13,10 @@ func (h *Hashmap) Inserthash(value string) {
 	index := hashfunction(value)
 	h.hmap[index].insertLinkedlist(value)
 }
+func (h *Hashmap) Inserthashsort(value string) {
+	index := hashfunctionsort(value)
+	h.hmap[index].insertLinkedlist(value)
+}
 func (h *Hashmap) Deletehash(value string) {
 	index := hashfunction(value)
 	h.hmap[index].deleteLinkedlist(value)
@@ -23,6 +27,10 @@ func hashfunction(key string) int {
 		sum += int(v)
 	}
 	return sum % n
+}
+func hashfunctionsort(key string) int {
+	sum := 0
+	return sum
 }
 func (h *Hashmap) searchhash(value string) bool {
 	return false
@@ -39,7 +47,6 @@ func Initalizemap() *Hashmap {
 //functions for linked linked
 type Linkedlist struct {
 	head *Node
-	tail *Node
 }
 type Node struct {
 	name string
@@ -81,13 +88,19 @@ func (h *Hashmap) sortlist() {
 	}
 }
 func main() {
-	n = 4
+	n = 10
 	test := Initalizemap()
 	fmt.Println(test)
-	test.Inserthash("aB")
-	test.Inserthash("bA")
-	test.Inserthash("aD")
-	test.Inserthash("bC")
+	test.Inserthashsort("ab")
+	test.Inserthashsort("a2we")
+	test.Inserthashsort("abcc")
+	test.Inserthashsort("abkkh")
+	test.Inserthashsort("abdssadw")
+	test.Inserthashsort("abjyjy")
+	test.Inserthashsort("batu6ut5")
+	test.Inserthashsort("cd")
+	test.Inserthashsort("aa")
+	test.Inserthashsort("as")
 	test.sortlist()
 	fmt.Println(test)
 }
