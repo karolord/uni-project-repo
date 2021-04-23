@@ -24,7 +24,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${file}"
+            "program": "${file}",
         },
         {
             "type": "java",

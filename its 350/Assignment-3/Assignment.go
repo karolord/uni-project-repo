@@ -5,6 +5,8 @@ import (
 )
 
 var n int
+var list Linkedlist
+var hashtable Hashmap
 
 type Hashmap struct {
 	hmap []*Linkedlist
@@ -13,7 +15,7 @@ type Hashmap struct {
 //functions for hashmap
 func (h *Hashmap) Inserthash(value string) {
 	index := hashfunction(value)
-	h.hmap[index].insertLinkedlist(value)
+	h.hmap[index].insertsorted(value)
 }
 func (h *Hashmap) Deletehash(value string) {
 	index := hashfunction(value)
@@ -36,7 +38,6 @@ func Initalizemap(size int) *Hashmap {
 type Linkedlist struct {
 	head   *Node
 	length int
-	tail   *Node
 }
 
 type Node struct {
@@ -46,16 +47,21 @@ type Node struct {
 
 func (l *Linkedlist) insertLinkedlist(value string) {
 	newNode := &Node{name: value}
+	newNode.next = l.head
+	l.head = newNode
+}
+func (l *Linkedlist) insertsorted(value string) {
+	newNode := &Node{name: value}
 	if l.head == nil {
 		newNode.next = l.head
 		l.head = newNode
-	} else if newNode.name[len(newNode.name)-1] < l.head.name[len(l.head.name)-1] {
+	} else if newNode.name[len(newNode.name)-1] <= l.head.name[len(l.head.name)-1] {
 		newNode.next = l.head
 		l.head = newNode
 	} else {
 		tmp := l.head
 		for tmp.next != nil {
-			if newNode.name[len(newNode.name)-1] < tmp.next.name[len(l.head.name)-1] {
+			if newNode.name[len(newNode.name)-1] < tmp.next.name[len(tmp.next.name)-1] {
 				newNode.next = tmp.next
 				tmp.next = newNode
 				break
@@ -66,7 +72,6 @@ func (l *Linkedlist) insertLinkedlist(value string) {
 			tmp = tmp.next
 		}
 	}
-
 }
 
 func (l *Linkedlist) deleteLinkedlist(value string) {
@@ -85,11 +90,40 @@ func (l *Linkedlist) deleteLinkedlist(value string) {
 }
 
 func main() {
-	testmap := Initalizemap(26)
-	fmt.Println(tolower("KKKKARaro"))
-	testmap.Inserthash("kaao")
-	testmap.Inserthash("kaac")
-	testmap.Inserthash("kaax")
-	testmap.Inserthash("kaab")
-	testmap.Inserthash("kaal")
+	requirement1()
+	requirement3()
+}
+func requirement1() {
+	fmt.Println("Please enter the amount of names you want:")
+	fmt.Scanf("%d", &n)
+	fmt.Scanln()
+	requirement2()
+}
+
+func requirement2() {
+	for i := 0; i < n; i++ {
+		fmt.Println("Please enter the name:")
+		var s string
+		fmt.Scanln(&s)
+		list.insertLinkedlist(s)
+	}
+}
+func requirement3() {
+	hashtable := Initalizemap(26)
+	node := list.head
+	for node != nil {
+		hashtable.Inserthash(node.name)
+		node = node.next
+	}
+	hashtable.Printhashtable()
+
+}
+func (h *Hashmap) Printhashtable() {
+	for i := 0; i < len(h.hmap); i++ {
+		node := h.hmap[i].head
+		for node != nil {
+			fmt.Println(node.name)
+			node = node.next
+		}
+	}
 }
