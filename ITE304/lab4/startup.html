@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms Lab</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Play"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+    fieldset {
+		border: .15em solid red;
+		color: red;
+	}
+	label {
+		color: blue;
+	}
+	input[type=text],input[type=password] {
+		margin-bottom:  1em;
+    border: .15em solid blue;
+    display: block;
+  }
+	#movie label, #subscribe label{
+		margin-right: 2em;
+	}
+  input[type=reset],input[type=submit]{
+    text-align:center;
+    margin-top: 2em;
+    border: .15em solid red;
+		color: blue;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: .3em;
+    padding-top: .3em;
+  }
+  input[type=reset]{
+    float: right;
+  }
+
+    @media only screen and (min-width: 700px) {
+      input[type=text],input[type=password] {	
+      display: inline;
+      margin-right:  3em;
+    }
+    input[type=reset]{
+    float: none;}
+  }
+
+
+    </style>
+  </head>
+
+  <body>
+    <form method="Get">
+      <fieldset id="account">
+        <legend>Account Details</legend>
+        <label for="username">Username:</label>
+        <input id="username" name="uname" type="text" />
+        <label for="pwd">Password:</label>
+        <input type="password" name="pwd" id="pwd" />
+      </fieldset>
+      <fieldset id="identity">
+        <legend>Identify Details</legend>
+        <label for="Firstname">First Name:</label>
+        <input id="Firstname" name="fname" type="text" />
+        <label for="Lastname">Last Name:</label>
+        <input id="Lastname" name="lname" type="text" />
+      </fieldset>
+      <fieldset id="movie">
+        <legend>What are your favorite movie genres?</legend>
+        <input id="actionmv" type="checkbox" name="actionmovie" />
+        <label for="actionmv">Action</label>
+        <input id="comedymv" type="checkbox" name="comedymovie" />
+        <label for="comedymv">Comedy</label>
+        <input id=" thrillermv" type="checkbox" name="thrillermovie" />
+        <label for="thrillermv">Thriller</label>
+        <input id="westernmv" type="checkbox" name="Westernmovie" />
+        <label for="westernmv">Western</label>
+      </fieldset>
+      <fieldset id="subscribe">
+        <legend>Would you like to subscribe to our newsletter</legend>
+        <input id="Yes" name="Yes" type="radio" value="Yes" />
+        <label for="Yes">Yes</label>
+        <input id="no" name="no" type="radio" value="no" />
+        <label for="No">No</label>
+      </fieldset>
+      <input id="submit" type="submit" value="Register" />
+      <input type="reset" id="Clear Form" value="Clear Form" />
+    </form>
+  </body>
+</html>
