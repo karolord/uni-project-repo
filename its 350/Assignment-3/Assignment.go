@@ -90,8 +90,11 @@ func (l *Linkedlist) deleteLinkedlist(value string) {
 }
 
 func main() {
+	hashtable := Initalizemap(26)
 	requirement1()
-	requirement3()
+	hashtable.requirement3()
+	hashtable.requirement4()
+
 }
 func requirement1() {
 	fmt.Println("Please enter the amount of names you want:")
@@ -108,22 +111,35 @@ func requirement2() {
 		list.insertLinkedlist(s)
 	}
 }
-func requirement3() {
-	hashtable := Initalizemap(26)
+func (h *Hashmap) requirement3() {
 	node := list.head
 	for node != nil {
-		hashtable.Inserthash(node.name)
+		h.Inserthash(node.name)
 		node = node.next
 	}
-	hashtable.Printhashtable()
-
+	h.Printhashtable()
 }
+
 func (h *Hashmap) Printhashtable() {
 	for i := 0; i < len(h.hmap); i++ {
 		node := h.hmap[i].head
 		for node != nil {
-			fmt.Println(node.name)
+			fmt.Printf(node.name, " ")
 			node = node.next
 		}
 	}
+}
+
+func (h *Hashmap) deleteletter(c string) {
+	x := (int(c[0]) - 19) % 26
+	h.hmap[x].head = nil
+}
+
+func (h *Hashmap) requirement4() {
+	h.deleteletter("r")
+	h.deleteletter("z")
+	h.Printhashtable()
+}
+func requirement5() {
+
 }
