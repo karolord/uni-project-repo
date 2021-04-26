@@ -42,9 +42,4 @@ mv *.config /home/kn18-00011/Desktop
 chgrp firefox /usr/bin/firefox
 chmod 750 /usr/bin/firefox
 
-chown .profile root
-$username1 firefox=‘/dev/null’
-$username2 firefox=‘/dev/null’
-$username3 firefox=‘/dev/null’
-
 #Requirement 7
