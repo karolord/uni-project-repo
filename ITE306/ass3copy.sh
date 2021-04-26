@@ -46,18 +46,13 @@ chmod 750 /usr/bin/firefox
 
 #Requirement 7
 echo “Enter a welcome message: “ 
-read welcome
-nano .bashrc
-if who -u | grep -q “^$username1”; then
+read  $welcome 
+sudo echo "if '${USER}' == $username1; then
 	echo “$welcome”
-fi
-
-read -p “Enter a welcome message: “ $welcome >> .bashrc
-
-echo Enter a welcome message
-read $welcome >> .bashrc
-
-
-echo Enter a welcome message
-read $welcome
-cat $welcome >> .bashrc
+fi" >> /etc/profile
+sudo echo "if '${USER}' == $username2; then
+	echo “$welcome”
+fi" >> /etc/profile
+sudo echo "if '${USER}' == $username3; then
+	echo “$welcome”
+fi" >> /etc/profile

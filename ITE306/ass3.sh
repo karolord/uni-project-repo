@@ -1,4 +1,7 @@
 #!/bin/bash
 #Requirement 7
-find /tmp/auis -name '*.config' -exec rm {} \;
-
+echo “Enter a welcome message: “ 
+read  $welcome 
+sudo echo "if '${USER}' == khaosking; then
+	echo “$welcome”
+fi" >> /etc/profile
