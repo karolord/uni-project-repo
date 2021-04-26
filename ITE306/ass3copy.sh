@@ -27,8 +27,10 @@ passwd -x "test_auis" 14
 ps -u auis_test
 
 #Requirement 5
-touch /tmp/auis
-cd /tmp/auis
+mkdir /tmp
+cd /tmp
+mkdir /auis
+cd /auis
 cp *.config /home/$username1
 cp *.config /home/$username2
 cp *.config /home/$username3
