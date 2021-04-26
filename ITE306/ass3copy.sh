@@ -27,10 +27,10 @@ passwd -x "$username2" 14
 passwd -x "$username3" 14
 
 # TEST BELOW
-echo “username1:$x” | chpasswd
-echo “username2:$x” | chpasswd
-echo “username3:$x” | chpasswd
-echo “test_auis:$x” | chpasswd
+echo “username1:$x” | sudo chpasswd
+echo “username2:$x” | sudo chpasswd
+echo “username3:$x” | sudo chpasswd
+echo “test_auis:$x” | sudo chpasswd
 passwd -x "$username1" 14
 passwd -x "$username2" 14
 passwd -x "$username3" 14
