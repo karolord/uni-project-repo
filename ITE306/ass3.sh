@@ -2,7 +2,7 @@
 #Requirement 7
 echo “Enter a welcome message: “ 
 read welcome
-    .bashrc
-if who -u | grep -q “^$username1”; then
+echo "if who -u | grep -q “^khaosking”; then
 	echo “$welcome”
-fi
+fi" >> ~/.bashrc
+
