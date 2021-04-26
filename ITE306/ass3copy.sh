@@ -60,4 +60,4 @@ read $welcome >> .bashrc
 
 echo Enter a welcome message
 read $welcome
-echo $welcome >> .bashrc
+cat $welcome >> .bashrc
