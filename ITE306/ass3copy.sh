@@ -15,9 +15,9 @@ useradd -m -g ite306 auis_test
 echo “$x” | passwd “$username1”
 echo “$x” | passwd “$username2”
 echo “$x” | passwd “$username3”
-$username1 -M 14
-$username2 -M 14
-$username3 -M 14
+chage $username1 -M 14
+chage $username2 -M 14
+chage $username3 -M 14
 
 #Requirement 4
 ps -u auis_test
