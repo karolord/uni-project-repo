@@ -49,7 +49,7 @@ chmod 750 /usr/bin/firefox
 
 #Requirement 7
 read -p “Enter a welcome message: “ welcome
-.bashrc
+nano .bashrc
 if who -u | grep -q “^$username1”; then
 	echo “$welcome”
 fi
