@@ -1,17 +1,14 @@
 #!/bin/bash
 #Requirement 1
-username1=“$RANDOM”
-username2=“$RANDOM”
-username3=“$RANDOM”
+username1=“user-$RANDOM”
+username2=“user-$RANDOM”
+username3=“user-$RANDOM”
 useradd -m user-“$username1”
 useradd -m user-“$username2”
 useradd -m user-“$username3”
 
-<<<<<<< HEAD
-groupadd ite306 
-=======
 #Requirement 2
->>>>>>> 8a4dd60727d15d6d2fc92265cac47961491a9883
+groupadd ite306 
 useradd -m -g ite306 auis_test
 
 #Requirement 3
@@ -23,7 +20,6 @@ $username2 -M 14
 $username3 -M 14
 
 #Requirement 4
-top -U auis_test
 ps -u auis_test
 
 #Requirement 5
