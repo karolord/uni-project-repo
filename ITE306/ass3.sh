@@ -1,9 +1,9 @@
 #!/bin/bash
-username1="user-$RANDOM"
-username2=“user-$RANDOM”
-username3=“user-$RANDOM”
+username1="$RANDOM
+username2=“$RANDOM”
+username3=“$RANDOM”
 
-groupadd 
-useradd -m -g ite306 auis_test
+echo “$username3”
+echo “$username2”
+echo “$username1”
 
-top -U auis_test

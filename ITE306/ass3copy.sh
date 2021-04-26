@@ -1,12 +1,12 @@
 #!/bin/bash
-username1=“$RANDOM”
-username2=“$RANDOM”
-username3=“$RANDOM”
+username1=“user-$RANDOM”
+username2=“user-$RANDOM”
+username3=“user-$RANDOM”
 useradd -m user-“$username1”
 useradd -m user-“$username2”
 useradd -m user-“$username3”
 
-
+groupadd ite306 
 useradd -m -g ite306 auis_test
 
 echo “$x” | passwd “$username1”
