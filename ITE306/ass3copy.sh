@@ -28,6 +28,8 @@ mv *.config /home/kn18-00011/Desktop
 
 #Requirement 6
 chown .profile root
-alias firefox=‘/dev/null’
+$username1 firefox=‘/dev/null’
+$username2 firefox=‘/dev/null’
+$username3 firefox=‘/dev/null’
 
 #Requirement 7
