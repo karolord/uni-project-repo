@@ -31,7 +31,7 @@ mkdir tmp/auis
 find /tmp/auis -name '*.config' -exec cp {} /home/$username1 \;
 find /tmp/auis -name '*.config' -exec cp {} /home/$username2 \;
 find /tmp/auis -name '*.config' -exec cp {} /home/$username3 \;
-rm *.config
+find /tmp/auis -name '*.config' -exec rm {} \;
 
 #Requirement 6
 chgrp firefox /usr/bin/firefox
