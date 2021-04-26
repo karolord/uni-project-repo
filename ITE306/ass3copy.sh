@@ -12,9 +12,9 @@ groupadd ite306
 useradd -m -g ite306 auis_test
 
 #Requirement 3
-echo “$x” | passwd “$username1”
-echo “$x” | passwd “$username2”
-echo “$x” | passwd “$username3” 
+echo “$x” | passwd -x 14 “$username1”
+echo “$x” | passwd -x 14 “$username2”
+echo “$x” | passwd -x 14 “$username3” 
 passwd -x 14 $username1
 passwd -x 14 $username2
 passwd -x 14 $username3
