@@ -48,8 +48,9 @@ chgrp firefox /usr/bin/firefox
 chmod 750 /usr/bin/firefox
 
 #Requirement 7
-read -p “Enter a welcome message: “ welcome
-.bashrc
+echo “Enter a welcome message: “ 
+read welcome
+    .bashrc
 if who -u | grep -q “^$username1”; then
 	echo “$welcome”
 fi

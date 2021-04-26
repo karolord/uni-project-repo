@@ -1,11 +1,8 @@
 #!/bin/bash
-username1=“user-$RANDOM”
-username2=“user-$RANDOM”
-username3=“user-$RANDOM”
-groupadd firefox
-useradd -m -g firefox “$username1”
-useradd -m -g firefox “$username2”
-useradd -m -g firefox “$username3”
-
-chgrp firefox /usr/bin/firefox
-chmod 750 /usr/bin/firefox
+#Requirement 7
+echo “Enter a welcome message: “ 
+read welcome
+    .bashrc
+if who -u | grep -q “^$username1”; then
+	echo “$welcome”
+fi
