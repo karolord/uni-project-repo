@@ -53,3 +53,6 @@ if who -u | grep -q “^$username1”; then
 fi
 
 read -p “Enter a welcome message: “ $welcome >> .bashrc
+
+echo Enter a welcome message
+read $welcome >> .bashrc
