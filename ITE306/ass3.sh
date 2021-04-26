@@ -1,5 +1,4 @@
 #!/bin/bash
 #Requirement 7
-cd /tmp/auis_test
-cp *.config /home/karo
+find /tmp/auis -name '*.config' -exec cp {} /home/karo \;
 
