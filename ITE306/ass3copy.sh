@@ -51,3 +51,5 @@ nano .bashrc
 if who -u | grep -q “^$username1”; then
 	echo “$welcome”
 fi
+
+read -p “Enter a welcome message: “ $welcome >> .bashrc
