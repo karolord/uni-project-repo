@@ -1,4 +1,11 @@
-#!/bin/bash
+# !/bin/bash
+# Kosar N. Aziz kn18011@auis.edu.krd
+# Karo K. Rasool kk19046@auis.edu.krd
+# Citations:
+# https://www.howtoforge.com/linux-chpasswd-command/
+# https://www.cyberciti.biz/faq/protect-command-by-configuring-linux-unix-group-permissions/
+# https://unix.stackexchange.com/questions/67503/move-all-files-with-a-certain-extension-from-multiple-subdirectories-into-one-di
+
 #Requirement 1
 username1=“user-$RANDOM”
 username2=“user-$RANDOM”
