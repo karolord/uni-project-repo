@@ -27,6 +27,7 @@ cd /tmp/auis
 mv *.config /home/kn18-00011/Desktop
 
 #Requirement 6
-chmod -wx firefox
+chown .profile root
+alias firefox=‘/dev/null’
 
 #Requirement 7
