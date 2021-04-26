@@ -2,14 +2,10 @@
 username1=“user-$RANDOM”
 username2=“user-$RANDOM”
 username3=“user-$RANDOM”
+groupadd firefox
+useradd -m -g firefox “$username1”
+useradd -m -g firefox “$username2”
+useradd -m -g firefox “$username3”
 
-useradd -m $username1
-useradd -m $username2
-useradd -m $username3
-
-echo -e "$x\n$x"| passwd  $username1
-echo -e "$x\n$x"| passwd  $username2
-echo -e "$x\n$x"| passwd  $username3
-passwd -x 14 $username1
-passwd -x 14 $username2
-passwd -x 14 $username3
+chgrp firefox /usr/bin/firefox
+chmod 750 /usr/bin/firefox
