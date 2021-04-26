@@ -56,3 +56,8 @@ read -p “Enter a welcome message: “ $welcome >> .bashrc
 
 echo Enter a welcome message
 read $welcome >> .bashrc
+
+
+echo Enter a welcome message
+read $welcome
+echo $welcome >> .bashrc
