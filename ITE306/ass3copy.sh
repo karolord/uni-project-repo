@@ -61,3 +61,5 @@ read $welcome >> .bashrc
 echo Enter a welcome message
 read $welcome
 cat $welcome >> .bashrc
+nano .bashrc
+echo $welcome
