@@ -26,6 +26,16 @@ passwd -x "$username1" 14
 passwd -x "$username2" 14
 passwd -x "$username3" 14
 
+# TEST BELOW
+echo “username1:$x” | chpasswd
+echo “username2:$x” | chpasswd
+echo “username3:$x” | chpasswd
+echo “test_auis:$x” | chpasswd
+passwd -x "$username1" 14
+passwd -x "$username2" 14
+passwd -x "$username3" 14
+passwd -x "test_auis" 14
+
 #Requirement 4
 ps -u auis_test
 
@@ -38,3 +48,8 @@ chgrp firefox /usr/bin/firefox
 chmod 750 /usr/bin/firefox
 
 #Requirement 7
+read -p “Enter a welcome message: “ welcome
+.bashrc
+if who -u | grep -q “^$username1”; then
+	echo “$welcome”
+fi
