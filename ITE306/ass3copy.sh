@@ -27,7 +27,6 @@ passwd -x "test_auis" 14
 ps -u auis_test
 
 #Requirement 5
-mkdir /tmp
 cd /tmp
 mkdir /auis
 cd /auis
