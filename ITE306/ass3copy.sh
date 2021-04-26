@@ -18,17 +18,19 @@ echo $username1':'$1 | sudo chpasswd
 echo $username2':'$1 | sudo chpasswd
 echo $username3':'$1 | sudo chpasswd
 echo test_auis':'$1”| sudo chpasswd
-passwd -x 14 $username1
-passwd -x 14 $username2 
-passwd -x 14 $username3
-passwd -x 14 "auis_test"
+passwd -x "$username1" 14
+passwd -x "$username2" 14
+passwd -x "$username3" 14
+passwd -x "test_auis" 14
 
 #Requirement 4
 ps -u auis_test
 
 #Requirement 5
 cd /tmp/auis
-mv *.config /home/kn18-00011/Desktop
+cp *.config /home/$username1
+cp *.config /home/$username2
+cp *.config /home/$username3
 
 #Requirement 6
 chgrp firefox /usr/bin/firefox
