@@ -13,24 +13,11 @@ groupadd ite306
 useradd -m -g ite306 auis_test
 
 #Requirement 3
-echo “$x” | passwd -x 14 “$username1”
-echo “$x” | passwd -x 14 “$username2”
-echo “$x” | passwd -x 14 “$username3” 
-passwd -x 14 $username1
-passwd -x 14 $username2
-passwd -x 14 $username3
-echo “$x” | passwd “$username1”
-echo “$x” | passwd “$username2”
-echo “$x” | passwd “$username3”
-passwd -x "$username1" 14
-passwd -x "$username2" 14
-passwd -x "$username3" 14
 
-# TEST BELOW
-echo “$username1:$1” | sudo chpasswd
-echo “$username2:$1” | sudo chpasswd
-echo “$username3:$1” | sudo chpasswd
-echo “test_auis:$1” | sudo chpasswd
+echo $username1':'$1 | sudo chpasswd
+echo $username2':'$1 | sudo chpasswd
+echo $username3':'$1 | sudo chpasswd
+echo test_auis':'$1”| sudo chpasswd
 passwd -x "$username1" 14
 passwd -x "$username2" 14
 passwd -x "$username3" 14
