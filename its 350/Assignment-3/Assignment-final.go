@@ -128,23 +128,23 @@ func (hashtable *Hashtable) requirement4() {
 	fmt.Println()
 }
 func requirement5() {
-	fmt.Println("the reversed link list:")
-	var prev *Node
-	var next *Node
-	current := list.head
-	for current != nil {
-		next = current.next
-		current.next = prev
-		prev = current
-		current = next
+	fmt.Println("the reversed link list:") // 1
+	var prev *Node // 1
+	var next *Node // 1
+	current := list.head // 3
+	for current != nil { // 2n + 2
+		next = current.next // 2n
+		current.next = prev // 2n
+		prev = current // 2n
+		current = next // 2n
 	}
-	list.head = prev
-	node := list.head
-	for node != nil {
-		fmt.Printf("%s ", node.name)
-		node = node.next
+	list.head = prev // 2
+	node := list.head // 3
+	for node != nil { // 2n + 2
+		fmt.Printf("%s ", node.name) // 2n
+		node = node.next // 2n
 	}
-	fmt.Println()
+	fmt.Println() // 1
 }
 func (hashtable *Hashtable) requirement6() {
 	if n < 3 {
