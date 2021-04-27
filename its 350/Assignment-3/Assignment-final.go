@@ -6,32 +6,36 @@ import (
 
 var n int
 var list Linkedlist
-var hashtable Hashmap
 
-type Hashmap struct {
+//functions for hashtable
+type Hashtable struct {
 	hmap []*Linkedlist
 }
 
-//functions for hashmap
-func (h *Hashmap) Inserthash(value string) {
+func (h *Hashtable) Inserthash(value string) {
 	index := hashfunction(value, len(h.hmap))
 	h.hmap[index].insertsorted(value)
-}
-func (h *Hashmap) Deletehash(value string) {
-	index := hashfunction(value, len(h.hmap))
-	h.hmap[index].deleteLinkedlist(value)
 }
 func hashfunction(key string, length int) int {
 	sum := int(key[len(key)-2])
 	return (sum - 19) % length
 }
-func Initalizemap(size int) *Hashmap {
-	result := &Hashmap{}
+func Initalizemap(size int) *Hashtable {
+	result := &Hashtable{}
 	result.hmap = make([]*Linkedlist, size)
 	for i := range result.hmap {
 		result.hmap[i] = &Linkedlist{}
 	}
 	return result
+}
+func (h *Hashtable) Printhashtable() {
+	for i := 0; i < len(h.hmap); i++ {
+		node := h.hmap[i].head
+		for node != nil {
+			fmt.Printf("%s ", node.name)
+			node = node.next
+		}
+	}
 }
 
 //functions for linked linked
@@ -40,6 +44,7 @@ type Linkedlist struct {
 	length int
 }
 
+// node for data and pointer
 type Node struct {
 	name string
 	next *Node
@@ -50,6 +55,8 @@ func (l *Linkedlist) insertLinkedlist(value string) {
 	newNode.next = l.head
 	l.head = newNode
 }
+
+//sorting for the hashtable
 func (l *Linkedlist) insertsorted(value string) {
 	newNode := &Node{name: value}
 	if l.head == nil {
@@ -74,40 +81,13 @@ func (l *Linkedlist) insertsorted(value string) {
 	}
 }
 
-func (l *Linkedlist) deleteLinkedlist(value string) {
-	if l.head.name == value {
-		l.head = l.head.next
-		return
-	}
-
-	prevNode := l.head
-	for prevNode.next != nil {
-		if prevNode.next.name == value {
-			prevNode.next = prevNode.next.next
-		}
-		prevNode = prevNode.next
-	}
-}
-
-func main() {
-	hashtable := Initalizemap(26)
-	n = 9
-	hashtable.Inserthash("karo")
-	hashtable.Inserthash("kosar")
-	hashtable.Inserthash("kerm")
-	hashtable.Inserthash("kerman")
-	hashtable.Inserthash("ahmad")
-	hashtable.Inserthash("omer")
-	//hashtable.requirement3()
-	//hashtable.requirement4()
-	hashtable.requirement6()
-
-}
+// Requirements
 func requirement1() {
 	fmt.Println("Please enter the amount of names you want:")
 	fmt.Scanf("%d", &n)
 	fmt.Scanln()
 	requirement2()
+	printlinklist()
 }
 
 func requirement2() {
@@ -118,42 +98,37 @@ func requirement2() {
 		list.insertLinkedlist(s)
 	}
 }
-func (h *Hashmap) requirement3() {
-	node := list.head
-	for node != nil {
-		h.Inserthash(node.name)
-		node = node.next
-	}
-	h.Printhashtable()
-}
-
-func (h *Hashmap) Printhashtable() {
-	for i := 0; i < len(h.hmap); i++ {
-		node := h.hmap[i].head
-		for node != nil {
-			fmt.Printf("%s ", node.name)
-			node = node.next
-		}
-	}
-}
-
-func (h *Hashmap) deleteletter(c string) {
-	x := (int(c[0]) - 19) % 26
-	h.hmap[x].head = nil
-}
-
-func (h *Hashmap) requirement4() {
-	h.deleteletter("r")
-	h.deleteletter("z")
-	h.Printhashtable()
-}
-func requirement5() {
+func printlinklist() {
+	fmt.Println("Linkedlist:")
 	node := list.head
 	for node != nil {
 		fmt.Printf("%s ", node.name)
 		node = node.next
 	}
 	fmt.Println()
+}
+func (hashtable *Hashtable) requirement3() {
+	node := list.head
+	for node != nil {
+		hashtable.Inserthash(node.name)
+		node = node.next
+	}
+}
+
+func (hashtable *Hashtable) deleteletter(c string) {
+	x := (int(c[0]) - 19) % 26
+	hashtable.hmap[x].head = nil
+}
+func (hashtable *Hashtable) requirement4() {
+	hashtable.deleteletter("r")
+	hashtable.deleteletter("z")
+	fmt.Println()
+	fmt.Println("Deleted R and Z: ")
+	hashtable.Printhashtable()
+	fmt.Println()
+}
+func requirement5() {
+	fmt.Println("the reversed link list:")
 	var prev *Node
 	var next *Node
 	current := list.head
@@ -164,20 +139,38 @@ func requirement5() {
 		current = next
 	}
 	list.head = prev
-	node = list.head
+	node := list.head
 	for node != nil {
 		fmt.Printf("%s ", node.name)
 		node = node.next
 	}
+	fmt.Println()
 }
-func (h *Hashmap) requirement6() {
+func (hashtable *Hashtable) requirement6() {
+	if n < 3 {
+		fmt.Println("The key size is not divisible by 3")
+		return
+	}
+	fmt.Println("Resized hashtable: ")
 	table6 := Initalizemap(n / 3)
-	for i := 0; i < len(h.hmap); i++ {
-		node := h.hmap[i].head
+	for i := 0; i < len(hashtable.hmap); i++ {
+		node := hashtable.hmap[i].head
 		for node != nil {
 			table6.Inserthash(node.name)
 			node = node.next
 		}
 	}
 	table6.Printhashtable()
+}
+func main() {
+	tablereq4 := Initalizemap(26)
+	hashtable := Initalizemap(26)
+	requirement1()
+	fmt.Println("Hashtable:")
+	hashtable.requirement3()
+	hashtable.Printhashtable()
+	tablereq4.requirement3()
+	tablereq4.requirement4()
+	requirement5()
+	hashtable.requirement6()
 }
