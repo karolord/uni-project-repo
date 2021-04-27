@@ -158,20 +158,20 @@ func requirement5() {
 	fmt.Println() // 1
 }
 func (hashtable *Hashtable) requirement6() {
-	if n < 3 {
-		fmt.Println("The key size is not divisible by 3")
-		return
+	if n < 3 { // 2
+		fmt.Println("The key size is not divisible by 3") // 1
+		return // 0
 	}
-	fmt.Println("Resized hashtable: ")
-	table6 := Initalizemap(n / 3)
-	for i := 0; i < len(hashtable.hmap); i++ {
-		node := hashtable.hmap[i].head
-		for node != nil {
-			table6.Inserthash(node.name)
-			node = node.next
+	fmt.Println("Resized hashtable: ") // 1
+	table6 := Initalizemap(n / 3) // 4 + 
+	for i := 0; i < len(hashtable.hmap); i++ { // 2, 4n + 4, 3n
+		node := hashtable.hmap[i].head // 4n
+		for node != nil { // 2n^2
+			table6.Inserthash(node.name) // 2n^2 + 
+			node = node.next // 2n^2
 		}
 	}
-	table6.Printhashtable()
+	table6.Printhashtable() // 1 +
 }
 func main() {
 	tablereq4 := Initalizemap(26)
