@@ -1,3 +1,14 @@
+/*Kosar N. Aziz kn18011@auis.edu.krd
+Karo K. Rasool kk19046@auis.edu.krd*/
+/*
+Requirement 5: T(n) = 16n + 16, Big O = O(n)
+Requirement 6: T(n) = , Big O = O()
+*/
+/*
+Citations:
+https://www.youtube.com/watch?v=zLnJcAt1aKs
+*/
+
 package main
 
 import (
