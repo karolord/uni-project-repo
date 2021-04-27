@@ -14,16 +14,16 @@ type Hashmap struct {
 
 //functions for hashmap
 func (h *Hashmap) Inserthash(value string) {
-	index := hashfunction(value)
+	index := hashfunction(value, len(h.hmap))
 	h.hmap[index].insertsorted(value)
 }
 func (h *Hashmap) Deletehash(value string) {
-	index := hashfunction(value)
+	index := hashfunction(value, len(h.hmap))
 	h.hmap[index].deleteLinkedlist(value)
 }
-func hashfunction(key string) int {
+func hashfunction(key string, length int) int {
 	sum := int(key[len(key)-2])
-	return (sum - 19) % 26
+	return (sum - 19) % length
 }
 func Initalizemap(size int) *Hashmap {
 	result := &Hashmap{}
@@ -91,9 +91,16 @@ func (l *Linkedlist) deleteLinkedlist(value string) {
 
 func main() {
 	hashtable := Initalizemap(26)
-	requirement1()
-	hashtable.requirement3()
-	hashtable.requirement4()
+	n = 9
+	hashtable.Inserthash("karo")
+	hashtable.Inserthash("kosar")
+	hashtable.Inserthash("kerm")
+	hashtable.Inserthash("kerman")
+	hashtable.Inserthash("ahmad")
+	hashtable.Inserthash("omer")
+	//hashtable.requirement3()
+	//hashtable.requirement4()
+	hashtable.requirement6()
 
 }
 func requirement1() {
@@ -124,7 +131,7 @@ func (h *Hashmap) Printhashtable() {
 	for i := 0; i < len(h.hmap); i++ {
 		node := h.hmap[i].head
 		for node != nil {
-			fmt.Printf(node.name, " ")
+			fmt.Printf("%s ", node.name)
 			node = node.next
 		}
 	}
@@ -141,5 +148,36 @@ func (h *Hashmap) requirement4() {
 	h.Printhashtable()
 }
 func requirement5() {
-
+	node := list.head
+	for node != nil {
+		fmt.Printf("%s ", node.name)
+		node = node.next
+	}
+	fmt.Println()
+	var prev *Node
+	var next *Node
+	current := list.head
+	for current != nil {
+		next = current.next
+		current.next = prev
+		prev = current
+		current = next
+	}
+	list.head = prev
+	node = list.head
+	for node != nil {
+		fmt.Printf("%s ", node.name)
+		node = node.next
+	}
+}
+func (h *Hashmap) requirement6() {
+	table6 := Initalizemap(n / 3)
+	for i := 0; i < len(h.hmap); i++ {
+		node := h.hmap[i].head
+		for node != nil {
+			table6.Inserthash(node.name)
+			node = node.next
+		}
+	}
+	table6.Printhashtable()
 }
