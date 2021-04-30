@@ -1,8 +1,22 @@
-package SE421.Assignment2;
-
-import java.util.*;
 
 public class artist {
     private String artistName;
-    private mediator2 songs;
+    private mediator mediator = new mediator();
+
+    public mediator getMediator() {
+        return this.mediator;
+    }
+
+    public void setSongs(song songs) {
+        mediator.setSongs(songs);
+    }
+
+    public String getArtistName() {
+        return this.artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
 }

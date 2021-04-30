@@ -1,22 +1,24 @@
-package SE421.Assignment2;
-
 import java.util.*;
 
 public class song {
     private String name;
     private int length;
     private String album;
-    private mediator2 artists;
     private LinkedList<String> composers = new LinkedList<String>();
+    private mediator mediator = new mediator();
 
-    public void print() {
-        System.out.printf(name + " " + length + " " + album + " " + composers);
+    public void printSong() {
+        System.out.printf(name + "\t" + length + "\t" + album + "\t" + composers + "\t\t");
+        mediator.printArtists();
         System.out.println();
     }
 
-    public void addArtists(artist artist) {
-        mediator2 artists = new mediator2();
-        mediator2.setArtists(artist);
+    public mediator getArtist() {
+        return this.mediator;
+    }
+
+    public void setArtist(artist artists) {
+        mediator.setArtists(artists);
     }
 
     public LinkedList<String> getComposers() {
