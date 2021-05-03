@@ -2,9 +2,21 @@
 import java.util.*;
 
 public class EmailAddresses {
+    private String OwnerAddress;
     private LinkedList<Messages> Sent = new LinkedList<Messages>();
     private LinkedList<Messages> Received = new LinkedList<Messages>();
-    private String OwnerAddress;
+
+    public LinkedList<Messages> getReceived() {
+        return this.Received;
+    }
+
+    public LinkedList<Messages> getSent() {
+        return this.Sent;
+    }
+
+    public void setSent(Messages Sent) {
+        this.Sent.add(Sent);
+    }
 
     public String getOwnerAddress() {
         return this.OwnerAddress;
@@ -18,4 +30,11 @@ public class EmailAddresses {
         this.OwnerAddress = Address;
     }
 
+    public void DeleteSent(int x) {
+        this.Sent.remove(x);
+    }
+
+    public void DeleteRecieved(int x) {
+        this.Received.remove(x);
+    }
 }

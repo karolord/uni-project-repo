@@ -6,6 +6,14 @@ public class Messages {
     private final LinkedList<EmailAddresses> SentTo = new LinkedList<EmailAddresses>();
     private final LinkedList<EmailAddresses> CC = new LinkedList<EmailAddresses>();
 
+    public final LinkedList<EmailAddresses> getSentTo() {
+        return this.SentTo;
+    }
+
+    public final LinkedList<EmailAddresses> getCC() {
+        return this.CC;
+    }
+
     public String getTitle() {
         return this.Title;
     }
