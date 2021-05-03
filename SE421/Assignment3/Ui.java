@@ -17,8 +17,14 @@ public class Ui {
         String title = scanner.nextLine();
         System.out.println("Please enter the message Description");
         String Description = scanner.nextLine();
-        LinkedList<EmailAddresses> SentTo = new LinkedList<EmailAddresses>();
-        LinkedList<EmailAddresses> CC = new LinkedList<EmailAddresses>();
+        LinkedList<EmailAddresses> SentTo = addEmails();
+        LinkedList<EmailAddresses> CC = addEmails();
+        System.out.println("end");
+
+    }
+
+    public static LinkedList<EmailAddresses> addEmails() {
+        LinkedList<EmailAddresses> tmplink = new LinkedList<EmailAddresses>();
         while (true) {
             System.out.println(
                     "Please enter the emails you want to sent the message to one at a time:( or 0 to exit the loop)");
@@ -30,15 +36,15 @@ public class Ui {
             for (Iterator i = main.allEmails.iterator(); i.hasNext();) {
                 EmailAddresses tmp = (EmailAddresses) i.next();
                 if (email.equals((tmp.getOwnerAddress()))) {
-                    SentTo.add(tmp);
+                    tmplink.add(tmp);
                     x = false;
                 }
             }
             if (x) {
-                SentTo.add(emailAddress);
+                tmplink.add(emailAddress);
                 main.allEmails.add(emailAddress);
             }
         }
-
+        return tmplink;
     }
 }
