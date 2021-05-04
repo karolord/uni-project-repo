@@ -5,4 +5,7 @@ public class main {
     public static LinkedList<EmailAddresses> allEmails = new LinkedList<EmailAddresses>();
     public static EmailAddresses CurrentEmail;
 
+    public static void main(String[] args) {
+        Ui.startmenu();
+    }
 }
