@@ -1,4 +1,11 @@
 #!/bin/bash
+#Karo Rasool kk19046@auis.edu.krd
+#Kosar Aziz kn18011@auis.edu.krd
+#Citation
+#https://unix.stackexchange.com/questions/629373/how-to-make-a-systemd-timer-that-runs-every-2-days
+#https://help.oclc.org/Librarian_Toolbox/Exchange_files_with_OCLC/Upload_files_with_SFTP/40SFTP_commands?sl=en
+#https://linuxcontainers.org/lxd/getting-started-cli/
+#https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
 #Requirement 1
 lxc launch image:ubuntu/21.04 Webserver
 #Requirement 2
