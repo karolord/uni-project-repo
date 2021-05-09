@@ -41,5 +41,18 @@ func (g *GeneralTree) InsertGeneralTree(S *Student) {
 }
 
 func main() {
+	gtree := &GeneralTree{}
+	s1 := &Student{"karo", 5, "aaaaaa"}
+	s2 := &Student{"kosar", 5, "aaaaaa"}
+	s3 := &Student{"ahmad", 5, "aaaaaa"}
+	s4 := &Student{"zebra", 5, "aaaaaa"}
+	s5 := &Student{"black", 5, "aaaaaa"}
+	s6 := &Student{"yellow", 5, "aaaaaa"}
+	gtree.InsertGeneralTree(s1)
+	gtree.InsertGeneralTree(s2)
+	gtree.InsertGeneralTree(s3)
+	gtree.InsertGeneralTree(s4)
+	gtree.InsertGeneralTree(s5)
+	gtree.InsertGeneralTree(s6)
 
 }
