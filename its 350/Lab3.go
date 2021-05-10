@@ -2,64 +2,66 @@ package main
 
 import "fmt"
 
-//Karo Rasool kk19046@auis.edu.krd*/
-
-type tree struct {
-	value  int
-	left   *tree
-	right  *tree
-	parent *tree
-	height int
+type stu struct {
+	name    string
+	ID      int
+	address string
+	left    *stu
+	right   *stu
+	mid     *stu
+	parent  *stu
 }
 
-func (t *tree) Insert(k int) {
-	x := &tree{k, nil, nil, nil, 0}
-	if t.value < k {
-		if t.right == nil {
-			x.parent = t
-			t.right = x
-			if t.left == nil {
-				calcheight(x)
-			}
-		} else {
-			t.right.Insert(k)
-		}
-	} else if t.value > k {
-		if t.left == nil {
-			x.parent = t
-			t.left = x
-			if t.right == nil {
-				calcheight(x)
-			}
-		} else {
-			t.left.Insert(k)
-		}
-	}
+var n int
+var name string
+var ID int
+var address string
+var p int
+var change *stu
+var root1 *stu
 
-}
-func calcheight(t *tree) {
-	c := t.parent
-	X := 0
-	for c != nil {
-		X++
-		if X+1 > c.height {
-			c.height = c.height + 1
-		}
-		c = c.parent
-	}
-}
+///var s *stu
 func main() {
-	x := &tree{5, nil, nil, nil, 0}
-	x.Insert(555)
-	x.Insert(554)
-	x.Insert(553)
-	x.Insert(552)
-	x.Insert(551)
-	x.Insert(550)
-	x.Insert(556)
-	x.Insert(557)
-	x.Insert(558)
-	x.Insert(3)
-	x.Insert(2)
-	fmt.Println(x.height)
+	requ1()
+
+}
+
+func requ1() {
+	n = 5
+	p = 1
+	for x := 1; x <= n; x++ {
+		name = "karo"
+		ID = 6
+		address = "karo"
+		if p == 1 {
+			s1 := add1(name, ID, address, nil)
+			change = s1
+			p++
+
+		} else {
+			s2 := add1(name, ID, address, change)
+			change = s2
+
+		}
+
+	}
+}
+func add1(na string, id int, addr string, target *stu) *stu {
+	s := stu{na, id, addr, nil, nil, nil, nil}
+	if root1 == nil {
+		root1 = &s
+		return &s
+	}
+	fmt.Printf("error check")
+	if s.ID < target.ID {
+		target.left = &s
+	} else if s.ID > target.ID {
+		target.right = &s
+	} else {
+		target.mid = &s
+	}
+
+	s.parent = target
+
+	return &s
 }

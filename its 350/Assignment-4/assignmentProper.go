@@ -39,5 +39,4 @@ func (g *NodeGeneral) InsertNodeGeneral(S *Student) {
 	}
 }
 func main() {
-	RootGeneralTree := &NodeGeneral{}
 }

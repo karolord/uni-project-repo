@@ -5,6 +5,7 @@ import "fmt"
 var n int
 var GeneralRoot Node
 var BinaryRoot BinaryTree
+var doublelist DoubleLinkedList
 
 type student struct {
 	Name    string
@@ -71,8 +72,36 @@ func (B BinaryTree) InsertBinaryNode(s *student) {
 	}
 }
 
+type DoubleLinkedList struct {
+	Tail *Nodelist
+	Head *Nodelist
+}
+type Nodelist struct {
+	key  *student
+	Prev *Nodelist
+	Next *Nodelist
+}
+
+func (l *DoubleLinkedList) insertNode(s *student) {
+	newNode := &Nodelist{key: s}
+	if l.Head == nil {
+		l.Head = newNode
+		l.Tail = newNode
+	} else {
+		currentNode := l.Head
+		for currentNode.Next != nil {
+			currentNode = currentNode.Next
+		}
+		newNode.Prev = currentNode
+		currentNode.Next = newNode
+		l.Tail = newNode
+	}
+}
+
 func main() {
 	Requirement1()
+	Requirement4()
+	Requirement5()
 }
 func Requirement1() {
 	var Name string
@@ -99,3 +128,76 @@ func Requirement3(s *student) {
 }
 
 //Converting Binary Tree To a Doubly Linkedlist
+func Requirement4() {
+	BinaryRoot.bsttodll(doublelist)
+}
+
+// in-order transverse over the binary search tree and transfer to doubly Linkedlist
+func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
+	if b != nil {
+		if b.Left != nil {
+			b.left.bsttodll(Head)
+		}
+		Head.insertNode(b.key)
+	}
+	if b.right != nil {
+		b.right.bsttodll(Head)
+	}
+}
+
+func Requirement5() {
+	var id int
+	fmt.Println("Please Enter an id you want to search for:")
+	fmt.Scanln(&id)
+	data := BinarySearch(id, doublelist.Head)
+	fmt.Println(data)
+}
+func BinarySearch(ID int, head *Nodelist) string {
+	size := n / 2
+	middle := NodeReturnAfter(head, size)
+	for middle.key.ID != ID {
+		if ID > middle.key.ID {
+			size = size / 2
+			tmp := NodeReturnAfter(middle, size)
+			if tmp.key.ID == middle.key.ID {
+				break
+			}
+		} else {
+			size = size / 2
+			tmp := NodeReturnPrev(middle, size)
+			if tmp.key.ID == middle.key.ID {
+				break
+			}
+		}
+	}
+	if middle.key.ID != ID {
+		return "ERROR ID NOT FOUND"
+	}
+	return "The Name is " + middle.key.Name + "The Address is " + middle.key.Address
+
+}
+
+func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
+	tmp := node
+	if size == 0 {
+		size += 1
+	}
+	for i := 0; i < size; i++ {
+		if tmp.Next != nil {
+			tmp = tmp.Next
+		}
+	}
+	return tmp
+}
+func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
+	tmp := node
+	if size == 0 {
+		size += 1
+	}
+	for i := 0; i < size; i++ {
+		if tmp.Prev != nil {
+			tmp = tmp.Prev
+		}
+	}
+	return tmp
+}
