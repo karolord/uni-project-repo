@@ -138,19 +138,19 @@ func Requirement3(s *student) {
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
 	tmp := &BinaryRoot // 2
-	tmp.bsttodll(&doublelist) // 2
+	tmp.bsttodll(&doublelist) // 2 * 
 }
 
 // in-order transverse over the binary search tree and transfer to doubly Linkedlist
 func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
 	if b != nil { // 3
 		if b.Left != nil { // 3
-			b.Left.bsttodll(Head) // 2n
+			b.Left.bsttodll(Head) // 2n + (4n + 11)
 		}
-		Head.insertNode(b.Key) // 2
+		Head.insertNode(b.Key) // 2 + (5n + 22)
 	}
 	if b.Right != nil { // 3
-		b.Right.bsttodll(Head) // 2n
+		b.Right.bsttodll(Head) // 2n + (4n + 11)
 	}
 }
 
