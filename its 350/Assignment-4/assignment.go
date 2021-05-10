@@ -83,18 +83,18 @@ type Nodelist struct {
 }
 
 func (l *DoubleLinkedList) insertNode(s *student) {
-	newNode := &Nodelist{key: s}
-	if l.Head == nil {
-		l.Head = newNode
-		l.Tail = newNode
+	newNode := &Nodelist{key: s} // 4
+	if l.Head == nil { // 3
+		l.Head = newNode // 2
+		l.Tail = newNode // 2
 	} else {
-		currentNode := l.Head
-		for currentNode.Next != nil {
-			currentNode = currentNode.Next
+		currentNode := l.Head // 2
+		for currentNode.Next != nil { // 3n + 3
+			currentNode = currentNode.Next // 2n
 		}
-		newNode.Prev = currentNode
-		currentNode.Next = newNode
-		l.Tail = newNode
+		newNode.Prev = currentNode // 2
+		currentNode.Next = newNode // 2
+		l.Tail = newNode // 2
 	}
 }
 
@@ -131,20 +131,20 @@ func Requirement3(s *student) {
 
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
-	tmp := &BinaryRoot
-	tmp.bsttodll(&doublelist)
+	tmp := &BinaryRoot // 2
+	tmp.bsttodll(&doublelist) // 2
 }
 
 // in-order transverse over the binary search tree and transfer to doubly Linkedlist
 func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
-	if b != nil {
-		if b.Left != nil {
-			b.Left.bsttodll(Head)
+	if b != nil { // 3
+		if b.Left != nil { // 3
+			b.Left.bsttodll(Head) // 2n
 		}
-		Head.insertNode(b.Key)
+		Head.insertNode(b.Key) // 2
 	}
-	if b.Right != nil {
-		b.Right.bsttodll(Head)
+	if b.Right != nil { // 3
+		b.Right.bsttodll(Head) // 2n
 	}
 }
 
