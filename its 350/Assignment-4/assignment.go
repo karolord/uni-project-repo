@@ -1,8 +1,8 @@
 /*Kosar N. Aziz kn18011@auis.edu.krd
 Karo K. Rasool kk19046@auis.edu.krd*/
 /*
-Requirement 4: T(n) = 9n + 37, Big O = O(n)
-Requirement 5: T(n) = , Big O = O(n)
+Requirement 4: T(n) = , Big O = O()
+Requirement 5: T(n) = , Big O = O()
 */
 package main
 
@@ -156,59 +156,59 @@ func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
 
 func Requirement5() {
 	var id int // 0
-	fmt.Println("Please Enter an id you want to search for:") //
-	fmt.Scanln(&id) // 
-	data := BinarySearch(id, doublelist.Head) // 
-	fmt.Println(data) // 
+	fmt.Println("Please Enter an id you want to search for:") // 1
+	fmt.Scanln(&id) // 2
+	data := BinarySearch(id, doublelist.Head) // 3
+	fmt.Println(data) // 2
 }
 func BinarySearch(ID int, head *Nodelist) string {
-	size := n / 2 // 
-	middle := NodeReturnAfter(head, size) // 
-	for middle.key.ID != ID { // 
-		if ID > middle.key.ID { // 
-			size = size / 2 // 
-			tmp := NodeReturnAfter(middle, size) // 
-			if tmp.key.ID == middle.key.ID { // 
-				break // 
+	size := n / 2 // 3
+	middle := NodeReturnAfter(head, size) // 3
+	for middle.key.ID != ID { // 3n + 3
+		if ID > middle.key.ID { // 3n
+			size = size / 2 // 3n
+			tmp := NodeReturnAfter(middle, size) // 3n
+			if tmp.key.ID == middle.key.ID { // 3n
+				break // 0n
 			}
-			middle = tmp // 
+			middle = tmp // 2n
 		} else {
-			size = size / 2 // 
-			tmp := NodeReturnPrev(middle, size) // 
-			if tmp.key.ID == middle.key.ID { // 
-				break // 
+			size = size / 2 // 3n
+			tmp := NodeReturnPrev(middle, size) // 3n
+			if tmp.key.ID == middle.key.ID { // 3n
+				break // 0n
 			}
-			middle = tmp // 
+			middle = tmp // 2n
 		}
 	}
-	if middle.key.ID != ID { // 
-		return "ERROR ID NOT FOUND" // 
+	if middle.key.ID != ID { // 3
+		return "ERROR ID NOT FOUND" // 0
 	}
-	return "The Name is " + middle.key.Name + " The Address is " + middle.key.Address // 
+	return "The Name is " + middle.key.Name + " The Address is " + middle.key.Address // 2
 
 }
 
 func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
-	tmp := node // 
-	if size == 0 { // 
-		size += 1 // 
+	tmp := node // 2
+	if size == 0 { // 2
+		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 
-		if tmp.Next != nil { // 
-			tmp = tmp.Next // 
+	for i := 0; i < size; i++ { // 1 + 3n + 3 + 3n
+		if tmp.Next != nil { // 2n
+			tmp = tmp.Next // 2n
 		}
 	}
-	return tmp // 
+	return tmp // 1
 }
 func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
-	tmp := node // 
-	if size == 0 { // 
-		size += 1 // 
+	tmp := node // 2
+	if size == 0 { // 2
+		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 
-		if tmp.Prev != nil { // 
-			tmp = tmp.Prev // 
+	for i := 0; i < size; i++ { // 1 + 3n + 3 + 3n
+		if tmp.Prev != nil { // 2n
+			tmp = tmp.Prev // 2n
 		}
 	}
-	return tmp // 
+	return tmp // 1
 }
