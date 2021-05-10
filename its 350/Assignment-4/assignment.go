@@ -193,7 +193,7 @@ func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
 	if size == 0 { // 2
 		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 1 + 3n + 3 + 3n
+	for i := 0; i < size; i++ { // 1 + 3(n/2 + 1) + 3(n/2)
 		if tmp.Next != nil { // 2n
 			tmp = tmp.Next // 2n
 		}
@@ -205,7 +205,7 @@ func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
 	if size == 0 { // 2
 		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 1 + 3n + 3 + 3n
+	for i := 0; i < size; i++ { // 1 + 3(n/2 + 1) + 3(n/2)
 		if tmp.Prev != nil { // 2n
 			tmp = tmp.Prev // 2n
 		}
