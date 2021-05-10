@@ -1,8 +1,8 @@
 /*Kosar N. Aziz kn18011@auis.edu.krd
 Karo K. Rasool kk19046@auis.edu.krd*/
 /*
-Requirement 4: T(n) = , Big O = O()
-Requirement 5: T(n) = , Big O = O()
+Requirement 4: T(n) = 5n^2 + 35n, Big O = O(n^2)
+Requirement 5: T(n) = 11nlog n + 8log n, Big O = O(nlog(n))
 */
 package main
 
@@ -145,7 +145,7 @@ func Requirement4() {
 /*the functon will call it self n times because it has to transverse the entire list and
 it will also call the insertnode function n times because it has to transfer n amount of students
 to the linked list so in total those two functons time complexity will be 13n(for the recursion) + (5n^2 + 22n) for the insertnode function
-35 n + 5n^2
+time complexity will be 5n^2 + 35n
 */
 func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
 	if b != nil { // 3
@@ -198,7 +198,7 @@ func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
 	if size == 0 { // 2
 		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 1 + 3( + 3
+	for i := 0; i < size; i++ { // 1 + 3 + 3
 		if tmp.Next != nil { // 2
 			tmp = tmp.Next // 2
 		}
