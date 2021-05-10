@@ -1,3 +1,9 @@
+/*Kosar N. Aziz kn18011@auis.edu.krd
+Karo K. Rasool kk19046@auis.edu.krd*/
+/*
+Requirement 4: T(n) = 9n + 37, Big O = O(n)
+Requirement 5: T(n) = , Big O = O(n)
+*/
 package main
 
 import "fmt"
