@@ -138,7 +138,7 @@ func Requirement3(s *student) {
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
 	tmp := &BinaryRoot        // 2
-	tmp.bsttodll(&doublelist) // 2 * n
+	tmp.bsttodll(&doublelist) // 35 n + 5n^2
 }
 
 // in-order transverse over the binary search tree and transfer to doubly Linkedlist
