@@ -9,7 +9,7 @@ package main
 import "fmt"
 
 var n int
-var GeneralRoot Node
+var GeneralRoot GeneralTree
 var BinaryRoot BinaryTree
 var doublelist DoubleLinkedList
 
