@@ -90,17 +90,17 @@ type Nodelist struct {
 
 func (l *DoubleLinkedList) insertNode(s *student) {
 	newNode := &Nodelist{key: s} // 4
-	if l.Head == nil { // 3
+	if l.Head == nil {           // 3
 		l.Head = newNode // 2
 		l.Tail = newNode // 2
 	} else {
-		currentNode := l.Head // 2
+		currentNode := l.Head         // 2
 		for currentNode.Next != nil { // 3n + 3
 			currentNode = currentNode.Next // 2n
 		}
 		newNode.Prev = currentNode // 2
 		currentNode.Next = newNode // 2
-		l.Tail = newNode // 2
+		l.Tail = newNode           // 2
 	}
 }
 
@@ -137,7 +137,7 @@ func Requirement3(s *student) {
 
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
-	tmp := &BinaryRoot // 2
+	tmp := &BinaryRoot        // 2
 	tmp.bsttodll(&doublelist) // 2
 }
 
@@ -155,27 +155,27 @@ func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
 }
 
 func Requirement5() {
-	var id int // 0
+	var id int                                                // 0
 	fmt.Println("Please Enter an id you want to search for:") // 1
-	fmt.Scanln(&id) // 2
-	data := BinarySearch(id, doublelist.Head) // 3
-	fmt.Println(data) // 2
+	fmt.Scanln(&id)                                           // 2
+	data := BinarySearch(id, doublelist.Head)                 // 3
+	fmt.Println(data)                                         // 2
 }
 func BinarySearch(ID int, head *Nodelist) string {
-	size := n / 2 // 3
+	size := n / 2                         // 3
 	middle := NodeReturnAfter(head, size) // 3
-	for middle.key.ID != ID { // 3n + 3
+	for middle.key.ID != ID {             // 3n + 3
 		if ID > middle.key.ID { // 3n
-			size = size / 2 // 3n
+			size = size / 2                      // 3n
 			tmp := NodeReturnAfter(middle, size) // 3n
-			if tmp.key.ID == middle.key.ID { // 3n
+			if tmp.key.ID == middle.key.ID {     // 3n
 				break // 0n
 			}
 			middle = tmp // 2n
 		} else {
-			size = size / 2 // 3n
+			size = size / 2                     // 3n
 			tmp := NodeReturnPrev(middle, size) // 3n
-			if tmp.key.ID == middle.key.ID { // 3n
+			if tmp.key.ID == middle.key.ID {    // 3n
 				break // 0n
 			}
 			middle = tmp // 2n
@@ -189,7 +189,7 @@ func BinarySearch(ID int, head *Nodelist) string {
 }
 
 func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
-	tmp := node // 2
+	tmp := node    // 2
 	if size == 0 { // 2
 		size += 1 // 3
 	}
@@ -201,7 +201,7 @@ func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
 	return tmp // 1
 }
 func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
-	tmp := node // 2
+	tmp := node    // 2
 	if size == 0 { // 2
 		size += 1 // 3
 	}
