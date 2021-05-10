@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 var n int
+var GeneralRoot Node
+var BinaryRoot BinaryTree
+var doublelist DoubleLinkedList
 
 type student struct {
 	Name    string
@@ -49,7 +52,7 @@ type BinaryTree struct {
 	Right *BinaryTree
 }
 
-func (B BinaryTree) InsertBinaryNode(s *student) {
+func (B *BinaryTree) InsertBinaryNode(s *student) {
 	if B.Key == nil {
 		B.Key = s
 		return
@@ -96,19 +99,11 @@ func (l *DoubleLinkedList) insertNode(s *student) {
 }
 
 func main() {
-	//GeneralRoot := &Node{}
-	BinaryRoot := &BinaryTree{}
-	doublelist := &DoubleLinkedList{}
-	//Requirement1(GeneralRoot,BinaryRoot)
-	n = 3
-	Requirement3(&student{"karo", 1, "a"})
-	Requirement3(&student{"kosar", 3, "a"})
-	Requirement3(&student{"karmand", 2, "a"})
+	Requirement1()
 	Requirement4()
-	data := BinarySearch(1, doublelist.Head)
-	fmt.Println(data)
+	Requirement5()
 }
-func Requirement1(n *Node, bt *BinaryTree) {
+func Requirement1() {
 	var Name string
 	var ID int
 	var Address string
@@ -122,19 +117,22 @@ func Requirement1(n *Node, bt *BinaryTree) {
 		fmt.Println("Please enter the Address of the student: ")
 		fmt.Scanln(&Address)
 		Requirement2(&student{Name, ID, Address})
-		Requirement3(&student{Name, ID, Address}, bt)
+		Requirement3(&student{Name, ID, Address})
 	}
 }
 func Requirement2(s *student) {
-	GeneralRoot.InsertGeneralNode(s)
+	tmp := &GeneralRoot
+	tmp.InsertGeneralNode(s)
 }
-func Requirement3(s *student, B BinaryTree) {
-	B.InsertBinaryNode(s)
+func Requirement3(s *student) {
+	tmp := &BinaryRoot
+	tmp.InsertBinaryNode(s)
 }
 
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
-	BinaryRoot.bsttodll(&doublelist)
+	tmp := &BinaryRoot
+	tmp.bsttodll(&doublelist)
 }
 
 // in-order transverse over the binary search tree and transfer to doubly Linkedlist
@@ -167,18 +165,20 @@ func BinarySearch(ID int, head *Nodelist) string {
 			if tmp.key.ID == middle.key.ID {
 				break
 			}
+			middle = tmp
 		} else {
 			size = size / 2
 			tmp := NodeReturnPrev(middle, size)
 			if tmp.key.ID == middle.key.ID {
 				break
 			}
+			middle = tmp
 		}
 	}
 	if middle.key.ID != ID {
 		return "ERROR ID NOT FOUND"
 	}
-	return "The Name is " + middle.key.Name + "The Address is " + middle.key.Address
+	return "The Name is " + middle.key.Name + " The Address is " + middle.key.Address
 
 }
 
