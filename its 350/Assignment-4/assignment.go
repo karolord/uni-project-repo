@@ -163,7 +163,7 @@ func Requirement5() {
 }
 func BinarySearch(ID int, head *Nodelist) string {
 	size := n / 2                         // 3
-	middle := NodeReturnAfter(head, size) // 3
+	middle := NodeReturnAfter(head, size) // 3 +
 	for middle.key.ID != ID {             // 3n + 3
 		if ID > middle.key.ID { // 3n
 			size = size / 2                      // 3n
@@ -212,3 +212,6 @@ func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
 	}
 	return tmp // 1
 }
+
+// the functions NodeReturnPrev and NodeReturnAfter are gonna be ran log n times
+// the total time complexity will be nlogn because we have to transverse throught the entire list
