@@ -19,33 +19,33 @@ type student struct {
 	Address string
 }
 
-type Node struct {
+type GeneralTree struct {
 	Key    *student
-	Left   *Node
-	Right  *Node
-	Middle *Node
+	Left   *GeneralTree
+	Right  *GeneralTree
+	Middle *GeneralTree
 }
 
-func (g *Node) InsertGeneralNode(s *student) {
+func (g *GeneralTree) InsertGeneralNode(s *student) {
 	if g.Key == nil {
 		g.Key = s
 		return
 	}
 	if s.Name[0] == g.Key.Name[0] {
 		if g.Middle == nil {
-			g.Middle = &Node{Key: s}
+			g.Middle = &GeneralTree{Key: s}
 		} else {
 			g.Middle.InsertGeneralNode(s)
 		}
 	} else if s.Name[0] > g.Key.Name[0] {
 		if g.Right == nil {
-			g.Right = &Node{Key: s}
+			g.Right = &GeneralTree{Key: s}
 		} else {
 			g.Right.InsertGeneralNode(s)
 		}
 	} else if s.Name[0] < g.Key.Name[0] {
 		if g.Left == nil {
-			g.Left = &Node{Key: s}
+			g.Left = &GeneralTree{Key: s}
 		} else {
 			g.Left.InsertGeneralNode(s)
 		}
