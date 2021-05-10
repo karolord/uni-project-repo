@@ -138,19 +138,24 @@ func Requirement3(s *student) {
 //Converting Binary Tree To a Doubly Linkedlist
 func Requirement4() {
 	tmp := &BinaryRoot        // 2
-	tmp.bsttodll(&doublelist) // 2
+	tmp.bsttodll(&doublelist) // 2 *
 }
 
 // in-order transverse over the binary search tree and transfer to doubly Linkedlist
+/*the functon will call it self n times because it has to transverse the entire list and
+it will also call the insertnode function n times because it has to transfer n amount of students
+to the linked list so in total those two functons time complexity will be 13n(for the recursion) + (5n^2 + 22n) for the insertnode function
+35 n + 5n^2
+*/
 func (b *BinaryTree) bsttodll(Head *DoubleLinkedList) {
 	if b != nil { // 3
 		if b.Left != nil { // 3
-			b.Left.bsttodll(Head) // 2n
+			b.Left.bsttodll(Head) //2
 		}
-		Head.insertNode(b.Key) // 2
+		Head.insertNode(b.Key) //2
 	}
 	if b.Right != nil { // 3
-		b.Right.bsttodll(Head) // 2n
+		b.Right.bsttodll(Head)
 	}
 }
 
@@ -162,20 +167,20 @@ func Requirement5() {
 	fmt.Println(data)                                         // 2
 }
 func BinarySearch(ID int, head *Nodelist) string {
-	size := n / 2                         // 3
-	middle := NodeReturnAfter(head, size) // 3 +
-	for middle.key.ID != ID {             // 3n + 3
+	size := n / 2 // 3
+	middle := NodeReturnAfter(head, size)
+	for middle.key.ID != ID { // 3n + 3
 		if ID > middle.key.ID { // 3n
-			size = size / 2                      // 3n
-			tmp := NodeReturnAfter(middle, size) // 3n
-			if tmp.key.ID == middle.key.ID {     // 3n
+			size = size / 2 // 3n
+			tmp := NodeReturnAfter(middle, size)
+			if tmp.key.ID == middle.key.ID { // 3n
 				break // 0n
 			}
 			middle = tmp // 2n
 		} else {
-			size = size / 2                     // 3n
-			tmp := NodeReturnPrev(middle, size) // 3n
-			if tmp.key.ID == middle.key.ID {    // 3n
+			size = size / 2 // 3n
+			tmp := NodeReturnPrev(middle, size)
+			if tmp.key.ID == middle.key.ID { // 3n
 				break // 0n
 			}
 			middle = tmp // 2n
@@ -193,9 +198,9 @@ func NodeReturnAfter(node *Nodelist, size int) *Nodelist {
 	if size == 0 { // 2
 		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 1 + 3(n/2 + 1) + 3(n/2)
-		if tmp.Next != nil { // 2n
-			tmp = tmp.Next // 2n
+	for i := 0; i < size; i++ { // 1 + 3( + 3
+		if tmp.Next != nil { // 2
+			tmp = tmp.Next // 2
 		}
 	}
 	return tmp // 1
@@ -205,13 +210,16 @@ func NodeReturnPrev(node *Nodelist, size int) *Nodelist {
 	if size == 0 { // 2
 		size += 1 // 3
 	}
-	for i := 0; i < size; i++ { // 1 + 3(n/2 + 1) + 3(n/2)
-		if tmp.Prev != nil { // 2n
-			tmp = tmp.Prev // 2n
+	for i := 0; i < size; i++ { // 1 + 3 + 3
+		if tmp.Prev != nil { // 2
+			tmp = tmp.Prev // 2
 		}
 	}
 	return tmp // 1
 }
 
-// the functions NodeReturnPrev and NodeReturnAfter are gonna be ran log n times
-// the total time complexity will be nlogn because we have to transverse throught the entire list
+/*the functions NodeReturnPrev and NodeReturnAfter are gonna be ran log n times
+the total time complexity will be n *log n because we have to transverse throught the entire list
+each Node return is gonna take 11n + 8 then we multiply it by log n
+time complexity will be 11n log n + 8 log n
+*/
