@@ -1,5 +1,4 @@
 public class TestMessages {
-  //choose class to test
   //remove tightly coupledness
   //Use polymorphism (interfaces)
   //Use either dependency injection or factory design pattern
