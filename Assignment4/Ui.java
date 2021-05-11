@@ -14,19 +14,19 @@ public class Ui {
         while (true) {
             System.out.println("Please select one of the following");
             System.out.println("1.Compose an email");
-            System.out.println("3.Print sent directory");
-            System.out.println("4.Print recieved directory");
-            System.out.println("5.Exit");
+            System.out.println("2.Print sent directory");
+            System.out.println("3.Print recieved directory");
+            System.out.println("4.Exit");
             int selection = scanner.nextInt();
             scanner.nextLine();
             switch (selection) {
                 case 1:
                     ComposeMessage();
                     break;
-                case 3:
+                case 2:
                     PrintSentdirectory();
                     break;
-                case 4:
+                case 3:
                     PrintInbox();
                     break;
                 default:
