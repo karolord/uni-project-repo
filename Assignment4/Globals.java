@@ -8,6 +8,6 @@ public class Globals {
   public static EmailAddresses CurrentEmail;
 
   // public class Ui
-  public static Scanner scanner = new Scanner(System.in);
 
+  public static Scanner scanner = new Scanner(System.in);
 }
