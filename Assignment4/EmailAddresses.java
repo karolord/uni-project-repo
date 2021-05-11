@@ -1,19 +1,19 @@
 import java.util.*;
 
-public class EmailAddresses {
+public class EmailAddresses implements AddressInterface {
     private String OwnerAddress;
-    private LinkedList<Messages> Sent = new LinkedList<Messages>();
-    private LinkedList<Messages> Received = new LinkedList<Messages>();
+    private LinkedList<MessageInterface> Sent = new LinkedList<MessageInterface>();
+    private LinkedList<MessageInterface> Received = new LinkedList<MessageInterface>();
 
-    public LinkedList<Messages> getReceived() {
+    public LinkedList<MessageInterface> getReceived() {
         return this.Received;
     }
 
-    public LinkedList<Messages> getSent() {
+    public LinkedList<MessageInterface> getSent() {
         return this.Sent;
     }
 
-    public void setSent(Messages Sent) {
+    public void setSent(MessageInterface Sent) {
         this.Sent.add(Sent);
     }
 
@@ -21,11 +21,12 @@ public class EmailAddresses {
         return this.OwnerAddress;
     }
 
-    public void setReceived(Messages msg) {
+    public void setReceived(MessageInterface msg) {
         this.Received.add(msg);
     }
 
     public EmailAddresses(String Address) {
         this.OwnerAddress = Address;
     }
+
 }

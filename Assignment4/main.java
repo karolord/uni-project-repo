@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class main {
-    public static LinkedList<Messages> allMessages = new LinkedList<Messages>();
-    public static LinkedList<EmailAddresses> allEmails = new LinkedList<EmailAddresses>();
+    public static LinkedList<MessageInterface> allMessages = new LinkedList<MessageInterface>();
+    public static LinkedList<AddressInterface> allEmails = new LinkedList<AddressInterface>();
     public static EmailAddresses CurrentEmail;
 
     public static void main(String[] args) {
