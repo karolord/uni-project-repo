@@ -1,6 +1,5 @@
 import java.util.*;
 
-public class TestMessages {
 public class TestMessagesClass {
   public void TestgetSentTo() {
     //
