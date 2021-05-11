@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Ui {
-    public static Scanner scanner = new Scanner(System.in);
 
     public static void startmenu() {
         System.out.println("Welcome to the greatest email client application");
