@@ -29,12 +29,4 @@ public class EmailAddresses {
     public EmailAddresses(String Address) {
         this.OwnerAddress = Address;
     }
-
-    public void DeleteSent(int x) {
-        this.Sent.remove(x);
-    }
-
-    public void DeleteRecieved(int x) {
-        this.Received.remove(x);
-    }
 }

@@ -14,7 +14,6 @@ public class Ui {
         while (true) {
             System.out.println("Please select one of the following");
             System.out.println("1.Compose an email");
-            System.out.println("2.Delete and email");
             System.out.println("3.Print sent directory");
             System.out.println("4.Print recieved directory");
             System.out.println("5.Exit");
@@ -23,9 +22,6 @@ public class Ui {
             switch (selection) {
                 case 1:
                     ComposeMessage();
-                    break;
-                case 2:
-                    DeleteEmail();
                     break;
                 case 3:
                     PrintSentdirectory();
@@ -132,32 +128,4 @@ public class Ui {
         return tmplink;
     }
 
-    public static void DeleteEmail() {
-        int counter = 0;
-        int counter2 = 0;
-        System.out.println("Emails in the sent directory:");
-        LinkedList<Messages> tmplink = main.CurrentEmail.getSent();
-        for (Iterator i = tmplink.iterator(); i.hasNext();) {
-            counter++;
-            counter2++;
-            Messages msg = (Messages) i.next();
-            System.out.println(counter + "- " + msg.getTitle());
-        }
-        System.out.println("Emails in the inbox directory:");
-        LinkedList<Messages> tmplink2 = main.CurrentEmail.getReceived();
-        for (Iterator i = tmplink2.iterator(); i.hasNext();) {
-            counter++;
-            Messages msg = (Messages) i.next();
-            System.out.println(counter + "- " + msg.getTitle());
-        }
-        System.out.println("Please enter the number of the email u want to delete:");
-        int index = scanner.nextInt();
-        scanner.nextLine();
-        if (index > counter2) {
-            main.CurrentEmail.DeleteRecieved(index - counter2 - 1);
-        } else {
-            main.CurrentEmail.DeleteSent(index - 1);
-        }
-        System.out.println("The message has been deleted");
-    }
 }

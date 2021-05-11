@@ -6,6 +6,7 @@
         "**/.factorypath": true
     },
     "java.project.sourcePaths": [
-        "SE421/Assignment3"
+        "SE421/Assignment3",
+        "SE421/Assignment4"
     ]
 }
