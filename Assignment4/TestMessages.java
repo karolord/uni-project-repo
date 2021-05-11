@@ -11,7 +11,4 @@ public class TestMessages {
   public void TestgetDescription() {
     //
   }
-  public void TestMessages() {
-    //
-  }
 }
