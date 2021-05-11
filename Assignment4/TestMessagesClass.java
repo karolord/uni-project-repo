@@ -1,4 +1,4 @@
-public class TestMessages {
+public class TestMessagesClass {
   public void TestgetSentTo() {
     //
   }
@@ -9,6 +9,9 @@ public class TestMessages {
     //
   }
   public void TestgetDescription() {
+    //
+  }
+  public void TestMessages() {
     //
   }
 }
