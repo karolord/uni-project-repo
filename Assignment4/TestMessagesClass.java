@@ -16,17 +16,52 @@ public class TestMessagesClass {
 
   public void TestgetCC() {
     //
+    AddressInterface fakeAddress = new AddressInterface() {
+      public void Print() {
+      }
+    };
+    LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();
+    fakelist.add(fakeAddress);
+
+    Messages m = new Messages("title", "Discription", fakelist, fakelist);
+    m.getCC();
   }
 
   public void TestgetTitle() {
     //
+    AddressInterface fakeAddress = new AddressInterface() {
+      public void Print() {
+      }
+    };
+    LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();
+    fakelist.add(fakeAddress);
+
+    Messages m = new Messages("title", "Discription", fakelist, fakelist);
+    m.getTitle();
   }
 
   public void TestgetDescription() {
     //
+    AddressInterface fakeAddress = new AddressInterface() {
+      public void Print() {
+      }
+    };
+    LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();
+    fakelist.add(fakeAddress);
+
+    Messages m = new Messages("title", "Discription", fakelist, fakelist);
+    m.getDescription();
   }
 
   public void TestMessage() {
     //
+    AddressInterface fakeAddress = new AddressInterface() {
+      public void Print() {
+      }
+    };
+    LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();
+    fakelist.add(fakeAddress);
+
+    Messages m = new Messages("title", "Discription", fakelist, fakelist);
   }
 }
