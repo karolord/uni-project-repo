@@ -53,7 +53,7 @@ public class TestMessagesClass {
     m.getDescription();
   }
 
-  public void TestMessage() {
+  public void TestMessages() {
     //
     AddressInterface fakeAddress = new AddressInterface() {
       public void Print() {
