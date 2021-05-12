@@ -4,7 +4,7 @@ public class TestMessagesClass {
   public void TestgetSentTo() {
     //
     AddressInterface fakeAddress = new AddressInterface() {
-      public void method() {
+      public void Print() {
       }
     };
     LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();

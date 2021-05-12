@@ -29,4 +29,8 @@ public class EmailAddresses implements AddressInterface {
         this.OwnerAddress = Address;
     }
 
+    public void Print() {
+        System.out.println(this.OwnerAddress);
+    }
+
 }
