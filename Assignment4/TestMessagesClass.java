@@ -61,7 +61,6 @@ public class TestMessagesClass {
     };
     LinkedList<AddressInterface> fakelist = new LinkedList<AddressInterface>();
     fakelist.add(fakeAddress);
-
     Messages m = new Messages("title", "Discription", fakelist, fakelist);
   }
 }
