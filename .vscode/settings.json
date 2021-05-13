@@ -6,7 +6,9 @@
         "**/.factorypath": true
     },
     "java.project.sourcePaths": [
-        "Assignment4"
+        "GUI",
+        "Assignment4",
+        "Gui/src"
     ],
     "maven.view": "hierarchical",
     "java.project.referencedLibraries": [
