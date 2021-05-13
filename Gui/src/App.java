@@ -8,10 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JTextField;
+
 
 public class App extends JFrame implements ActionListener {
-    JTextField jt;
     JButton[] btns = new JButton[10];
     int[] arr = new int[10];
     int[] arr2 = {1,1,0,1,1,0,1,1,1,1};
@@ -38,13 +37,26 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         );
+
+        item.addActionListener(
+            new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e){
+                    for (int i = 0; i < btns.length; i++) {
+                        if(arr[i] == 1){
+                            btns[i].setBackground(Color.RED);
+                        }else{
+                            btns[i].setBackground(Color.GREEN);
+                        }
+                    }
+                }
+            }
+        );
         menuBar.add(menu);
         menu.add(item);
         menu.add(item2);
         setJMenuBar(menuBar);
         setLayout(new FlowLayout());
-        jt = new JTextField(10);
-        add(jt);
         for (int i = 0; i < btns.length; i++) {
             btns[i] = new JButton(Integer.toString(i));
             btns[i].addActionListener(this);
