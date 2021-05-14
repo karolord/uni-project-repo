@@ -112,12 +112,9 @@ public class GuiAircopy extends JPanel implements ActionListener {
             try {
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airlinereservationdb", "root",
                         "root");
-                System.out.println("connected");
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery("Select s_reserved from airlinereservationdb.seat WHERE s_number = '"
                         + buttonName + "' AND f_code = '" + SelectedFlight + "';");
-                System.out.println("Select s_reserved from airlinereservationdb.seat WHERE s_number = '" + buttonName
-                        + "' AND f_code = '" + SelectedFlight + "';");
                 rs.next();
                 if ((Boolean) rs.getObject(1)) {
                     button[i].setBackground(Color.RED);
@@ -134,8 +131,6 @@ public class GuiAircopy extends JPanel implements ActionListener {
     public void DBupdate(JButton button, int x) {
 
         String buttonName = button.getText();
-        System.out.println("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + " WHERE s_number ='" + buttonName
-                + "' and f_code = '" + SelectedFlight + "';");
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airlinereservationdb", "root",
                     "root");
@@ -145,8 +140,6 @@ public class GuiAircopy extends JPanel implements ActionListener {
             st.executeUpdate("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + " WHERE s_number ='"
                     + buttonName + "' and f_code = '" + SelectedFlight + "';");
 
-            System.out.println("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + "WHERE s_number ='"
-                    + buttonName + "' and f_code = '" + SelectedFlight + "';");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
