@@ -40,7 +40,7 @@ public class GuiAircopy extends JPanel implements ActionListener{
                 }else if(((String)Flights.getSelectedItem()).equals("AUI33 Berlin to Texas")){
                     ButtonsA[2].setBackground(Color.BLUE);
                 }else{
-                    ButtonsA[4].setBackground(Color.BLUE);
+                    ButtonsA[3].setBackground(Color.BLUE);
                 }
             }
         });
