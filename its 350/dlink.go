@@ -1,46 +1,103 @@
 package main
 
-type Student struct {
-	grade    int
-	children [2]*Student
-	parent   *Student
-	height   int
+import "fmt"
+
+type stu struct {
+	name    string
+	ID      int
+	address string
+	left    *stu
+	right   *stu
+	mid     *stu
+	parent  *stu
 }
 
-var root *Student
+var n int
+var name string
+var ID int
+var address string
+var p int
+var change *stu
+var root1 *stu
 
-func calcHeight(s *Student) {
-	c := s.parent
-	counter := 0
-	if c.children[1] == nil && c.children[0] == nil {
-		for c != nil {
-			counter++
-			if counter >= c.height {
-				c.height = counter
-			}
-			c = c.parent
-		}
-	}
-}
-
-func add(g int, target *Student, dir int) *Student {
-	s := Student{g, nil, nil, nil, 0}
-	if root == nil {
-		root = &s
-		return &s
-	}
-
-	target.children[dir] = &s
-
-	s.parent = target
-	calcHeight(&s)
-	return &s
-}
+///var s *stu
 
 func main() {
-	s1 := add(100, nil, 0)
-	s2 := add(85, s1, 0)
-	s3 := add(70, s1, 1)
-	s4 := add(75, s1, 2)
-	s5 := add(20, s3, 0)
+	p = 1
+	s1 := add1("name", 5, "address", nil)
+	fmt.Println(root1)
+	change = s1
+	name = "karo"
+	address = "karo"
+	Add(4)
+
+}
+
+func requ1() {
+	fmt.Print("Enter the n number of students: ")
+	fmt.Scan(&n)
+
+	for x := 1; x <= n; x++ {
+		fmt.Printf("Enter name %d: ", x)
+		fmt.Scan(&name)
+		fmt.Printf("Enter ID %d: ", x)
+		fmt.Scan(&ID)
+		fmt.Printf("Enter address %d: ", x)
+		fmt.Scan(&address)
+		fmt.Println()
+
+		if p == 1 {
+			s1 := add1(name, ID, address, nil)
+			change = s1
+			p++
+
+		} else {
+			Add(ID)
+
+		}
+
+	}
+}
+
+func Add(idi int) {
+	c := root1
+	for c != nil {
+		if idi < c.ID {
+			//go left
+			left := c.left
+			if left == nil {
+				add1(name, idi, address, left)
+				return
+			}
+			c = left
+		} else {
+			///go right
+			right := c.right
+			if right == nil {
+				add1(name, idi, address, right)
+				break
+			}
+			c = right
+		}
+
+	}
+}
+func add1(na string, id int, addr string, target *stu) *stu {
+	s := stu{na, id, addr, nil, nil, nil, nil}
+	fmt.Println(target)
+	if root1 == nil {
+		root1 = &s
+		return &s
+	} else {
+
+		if s.ID < target.ID {
+			target.left = &s
+		} else if s.ID > target.ID {
+			target.right = &s
+		}
+
+		s.parent = target
+
+		return &s
+	}
 }

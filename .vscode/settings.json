@@ -6,7 +6,8 @@
         "**/.factorypath": true
     },
     "java.project.sourcePaths": [
-        "Assignment4"
+        "Assignment4",
+        "Olympus/src"
     ],
     "maven.view": "hierarchical",
     "java.project.referencedLibraries": [

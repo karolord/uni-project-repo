@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "uni-project-repo_cfc45e45"
+        },
+        {
+            "type": "java",
             "name": "Launch main",
             "request": "launch",
             "mainClass": "main",
