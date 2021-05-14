@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.sql.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -30,6 +30,7 @@ public class GuiAircopy extends JPanel implements ActionListener {
     }
 
     public GuiAircopy() {
+        SelectedFlight = "AUI22";
         setLayout(null);
         Flights = new JComboBox<String>(FlightNames);
         Flights.setMaximumRowCount(3);
@@ -40,10 +41,22 @@ public class GuiAircopy extends JPanel implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 if (((String) Flights.getSelectedItem()).equals("AUI22 London to Melbourne")) {
                     SelectedFlight = "AUI22";
+                    buttonupdate(ButtonsA);
+                    buttonupdate(ButtonsB);
+                    buttonupdate(ButtonsC);
+                    buttonupdate(ButtonsD);
                 } else if (((String) Flights.getSelectedItem()).equals("AUI33 Berlin to Texas")) {
                     SelectedFlight = "AUI33";
+                    buttonupdate(ButtonsA);
+                    buttonupdate(ButtonsB);
+                    buttonupdate(ButtonsC);
+                    buttonupdate(ButtonsD);
                 } else {
                     SelectedFlight = "AUI44";
+                    buttonupdate(ButtonsA);
+                    buttonupdate(ButtonsB);
+                    buttonupdate(ButtonsC);
+                    buttonupdate(ButtonsD);
                 }
             }
         });
@@ -83,15 +96,59 @@ public class GuiAircopy extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (((JButton) e.getSource()).getBackground() == Color.GREEN) {
             ((JButton) e.getSource()).setBackground(Color.RED);
+            DBupdate((JButton) e.getSource(), 1);
+
         } else {
             ((JButton) e.getSource()).setBackground(Color.GREEN);
+            DBupdate((JButton) e.getSource(), 0);
         }
 
     }
 
     public void buttonupdate(JButton[] button) {
-        for (int i = 0; i < button.length; i++) {
 
+        for (int i = 0; i < button.length; i++) {
+            String buttonName = button[i].getText();
+            try {
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airlinereservationdb", "root",
+                        "root");
+                System.out.println("connected");
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery("Select s_reserved from airlinereservationdb.seat WHERE s_number = '"
+                        + buttonName + "' AND f_code = '" + SelectedFlight + "';");
+                System.out.println("Select s_reserved from airlinereservationdb.seat WHERE s_number = '" + buttonName
+                        + "' AND f_code = '" + SelectedFlight + "';");
+                rs.next();
+                if ((Boolean) rs.getObject(1)) {
+                    button[i].setBackground(Color.RED);
+                } else {
+                    button[i].setBackground(Color.GREEN);
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+    }
+
+    public void DBupdate(JButton button, int x) {
+
+        String buttonName = button.getText();
+        System.out.println("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + " WHERE s_number ='" + buttonName
+                + "' and f_code = '" + SelectedFlight + "';");
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airlinereservationdb", "root",
+                    "root");
+            System.out.println("connected");
+            Statement st = con.createStatement();
+
+            st.executeUpdate("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + " WHERE s_number ='"
+                    + buttonName + "' and f_code = '" + SelectedFlight + "';");
+
+            System.out.println("UPDATE airlinereservationdb.seat SET s_Reserved = " + x + "WHERE s_number ='"
+                    + buttonName + "' and f_code = '" + SelectedFlight + "';");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
 
     }

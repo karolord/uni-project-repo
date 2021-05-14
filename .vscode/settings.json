@@ -6,14 +6,9 @@
         "**/.factorypath": true
     },
     "java.project.sourcePaths": [
-<<<<<<< HEAD
-        "Assignment4",
-        "Olympus/src"
-=======
         "GUI",
         "Assignment4",
         "Gui/src"
->>>>>>> b31121ebd06efdfef0402a929839e1ce372740fa
     ],
     "maven.view": "hierarchical",
     "java.project.referencedLibraries": [
@@ -28,6 +23,7 @@
         "Assignment4/lib/javax.inject-1.jar",
         "Assignment4/lib/jsr305-3.0.2.jar",
         "Assignment4/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
-        "/usr/share/java/mysql-connector-java-8.0.25.jar"
+        "/usr/share/java/mysql-connector-java-8.0.25.jar",
+        "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.25.jar"
     ]
 }
