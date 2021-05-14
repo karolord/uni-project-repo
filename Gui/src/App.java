@@ -11,7 +11,7 @@ import javax.swing.JMenuItem;
 
 
 public class App extends JFrame implements ActionListener {
-    JButton[] btns = new JButton[10];
+    JButton[] btns = new JButton[5];
     int[] arr = new int[10];
     int[] arr2 = {1,1,0,1,1,0,1,1,1,1};
     JMenuBar menuBar;

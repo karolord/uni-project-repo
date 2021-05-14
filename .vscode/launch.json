@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GuiAircopy",
+            "request": "launch",
+            "mainClass": "GuiAircopy",
+            "projectName": "uni-project-repo_95865a9e"
+        },
+        {
+            "type": "java",
             "name": "Launch GuiAir",
             "request": "launch",
             "mainClass": "GuiAir",
