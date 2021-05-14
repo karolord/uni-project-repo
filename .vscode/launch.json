@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AccessDB",
+            "request": "launch",
+            "mainClass": "AccessDB",
+            "projectName": "uni-project-repo_95865a9e"
+        },
+        {
+            "type": "java",
             "name": "Launch GuiAircopy",
             "request": "launch",
             "mainClass": "GuiAircopy",
